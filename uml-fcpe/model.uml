@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_jUgsMLb8EeawgtDDUI8vZw" name="RootElement">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_jXJwgLb8EeawgtDDUI8vZw" name="Activity1"/>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_jZSegLb8EeawgtDDUI8vZw" name="StateMachine1">
+    <region xmi:type="uml:Region" xmi:id="_jZocwLb8EeawgtDDUI8vZw" name="Region1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_oH47oLb8EeawgtDDUI8vZw" name="parents d'élèves"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_qYqEYLb8EeawgtDDUI8vZw" name="Répondre au formulaire"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_3YHkcLb8EeawgtDDUI8vZw" memberEnd="_3YWN8Lb8EeawgtDDUI8vZw _3YW1ALb8EeawgtDDUI8vZw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3YKnwLb8EeawgtDDUI8vZw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3YLO0Lb8EeawgtDDUI8vZw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_3YWN8Lb8EeawgtDDUI8vZw" name="parents d'eleve" type="_oH47oLb8EeawgtDDUI8vZw" association="_3YHkcLb8EeawgtDDUI8vZw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_3YW1ALb8EeawgtDDUI8vZw" name="repondre au questionnaire" type="_qYqEYLb8EeawgtDDUI8vZw" association="_3YHkcLb8EeawgtDDUI8vZw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_4dreULb8EeawgtDDUI8vZw" name="Formulaire anonyme">
+    <generalization xmi:type="uml:Generalization" xmi:id="_C68ucLb9EeawgtDDUI8vZw" general="_qYqEYLb8EeawgtDDUI8vZw"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="__AIesLb8EeawgtDDUI8vZw" name="formaulaire anonyme"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="__bLb8Lb8EeawgtDDUI8vZw" name="CopyOf_formaulaire anonyme_1">
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="__bLb8bb8EeawgtDDUI8vZw" name="formaulaire anonyme"/>
+    </ownedUseCase>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="__4bYoLb8EeawgtDDUI8vZw" name="Formulaire personnalisé">
+    <generalization xmi:type="uml:Generalization" xmi:id="_EF6swLb9EeawgtDDUI8vZw" general="_qYqEYLb8EeawgtDDUI8vZw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_V6-CwLb9EeawgtDDUI8vZw" name="Preparer un Questionnaire">
+    <include xmi:type="uml:Include" xmi:id="_dxoMMLfdEea3Fv1l_b1ong" addition="_PXbB4LfcEea3Fv1l_b1ong"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_pQKV0Lb9EeawgtDDUI8vZw" name="Visualiser les résultats de la campagne">
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_Xh2EgLb-EeawgtDDUI8vZw" name="ExtensionPoint1"/>
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_x-TbgLfKEea3Fv1l_b1ong" name="ExtensionPoint2"/>
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_yepIcLfKEea3Fv1l_b1ong" name="ExtensionPoint3"/>
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_y-dQ8LfKEea3Fv1l_b1ong" name="ExtensionPoint4"/>
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_zY6_YbfKEea3Fv1l_b1ong" name="ExtensionPoint5"/>
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_zzuFALfKEea3Fv1l_b1ong" name="ExtensionPoint6"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_rV-LwLb9EeawgtDDUI8vZw" name="Envoyer un formulaire"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_uLx7QLb9EeawgtDDUI8vZw" name="Formulaire personnalisé">
+    <generalization xmi:type="uml:Generalization" xmi:id="_uLx7Qbb9EeawgtDDUI8vZw" general="_qYqEYLb8EeawgtDDUI8vZw"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_zqfmsLb9EeawgtDDUI8vZw" general="_rV-LwLb9EeawgtDDUI8vZw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_uLyiULb9EeawgtDDUI8vZw" name="Formulaire anonyme">
+    <generalization xmi:type="uml:Generalization" xmi:id="_uLyiUbb9EeawgtDDUI8vZw" general="_qYqEYLb8EeawgtDDUI8vZw"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_SwyJQLb-EeawgtDDUI8vZw" general="_rV-LwLb9EeawgtDDUI8vZw"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_uLyiUrb9EeawgtDDUI8vZw" name="formaulaire anonyme"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_uLyiU7b9EeawgtDDUI8vZw" name="CopyOf_formaulaire anonyme_1">
+      <ownedUseCase xmi:type="uml:UseCase" xmi:id="_uLyiVLb9EeawgtDDUI8vZw" name="formaulaire anonyme"/>
+    </ownedUseCase>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="__kkIwLe9Eea3Fv1l_b1ong" name="Gerer les utilisateurs locaux"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_F5t3gLe_Eea3Fv1l_b1ong" name="Administrateur Local"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_H0PqgLe_Eea3Fv1l_b1ong" name="Gerer les classes (CRUD Classe/Eleve)"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_06ruELe_Eea3Fv1l_b1ong" memberEnd="_06s8Mbe_Eea3Fv1l_b1ong _06tjQLe_Eea3Fv1l_b1ong">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_06sVILe_Eea3Fv1l_b1ong" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_06s8MLe_Eea3Fv1l_b1ong" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_06s8Mbe_Eea3Fv1l_b1ong" name="administrateur" type="_F5t3gLe_Eea3Fv1l_b1ong" association="_06ruELe_Eea3Fv1l_b1ong"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_06tjQLe_Eea3Fv1l_b1ong" name="gerer les classes" type="_H0PqgLe_Eea3Fv1l_b1ong" association="_06ruELe_Eea3Fv1l_b1ong"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_DW9xcLfAEea3Fv1l_b1ong" name="Administrateur General">
+    <generalization xmi:type="uml:Generalization" xmi:id="_HPYNcLfAEea3Fv1l_b1ong" general="_F5t3gLe_Eea3Fv1l_b1ong"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_egKMULfAEea3Fv1l_b1ong" name="Gerer les Etablissements (CRUD)"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_mY5qMLfAEea3Fv1l_b1ong" memberEnd="_mY64ULfAEea3Fv1l_b1ong _mY64UbfAEea3Fv1l_b1ong">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mY6RQLfAEea3Fv1l_b1ong" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mY6RQbfAEea3Fv1l_b1ong" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_mY64ULfAEea3Fv1l_b1ong" name="gerer les etablissements" type="_egKMULfAEea3Fv1l_b1ong" association="_mY5qMLfAEea3Fv1l_b1ong"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_mY64UbfAEea3Fv1l_b1ong" name="administrateur general" type="_DW9xcLfAEea3Fv1l_b1ong" association="_mY5qMLfAEea3Fv1l_b1ong"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_dOhTYLfCEea3Fv1l_b1ong" name="Gerer les utilisateurs generaux"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_ed1M4LfHEea3Fv1l_b1ong" name="Importer Fiche Eleves">
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_kXkAYLfHEea3Fv1l_b1ong" name="ExtensionPoint1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_CHPf4LfJEea3Fv1l_b1ong" name="Gerer une Campagne">
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_6feOEMIMEeatm7MEaDZsfw" name="Gerer une Campagne">
+      <include xmi:type="uml:Include" xmi:id="_6feOEcIMEeatm7MEaDZsfw" addition="_rV-LwLb9EeawgtDDUI8vZw"/>
+    </ownedUseCase>
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_AvRYMMINEeatm7MEaDZsfw" name="ExtensionPoint1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_rreA8LfJEea3Fv1l_b1ong" name="Service Administratif Etablissement"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_GdUS0LfKEea3Fv1l_b1ong" memberEnd="_GdU54rfKEea3Fv1l_b1ong _GdVg8LfKEea3Fv1l_b1ong">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GdU54LfKEea3Fv1l_b1ong" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GdU54bfKEea3Fv1l_b1ong" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_GdU54rfKEea3Fv1l_b1ong" name="administratif etablissement" type="_rreA8LfJEea3Fv1l_b1ong" association="_GdUS0LfKEea3Fv1l_b1ong"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_GdVg8LfKEea3Fv1l_b1ong" name="formulaire anonyme" type="_uLyiULb9EeawgtDDUI8vZw" association="_GdUS0LfKEea3Fv1l_b1ong"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_PXbB4LfcEea3Fv1l_b1ong" name="Gerer Question (CRUD)"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_w2vOsMILEeatm7MEaDZsfw" memberEnd="_w3CwsMILEeatm7MEaDZsfw _w3DXwMILEeatm7MEaDZsfw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_w20uQMILEeatm7MEaDZsfw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_w21VUMILEeatm7MEaDZsfw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_w3CwsMILEeatm7MEaDZsfw" name="importer fiche eleves" type="_ed1M4LfHEea3Fv1l_b1ong" association="_w2vOsMILEeatm7MEaDZsfw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_w3DXwMILEeatm7MEaDZsfw" name="administrateur local" type="_F5t3gLe_Eea3Fv1l_b1ong" association="_w2vOsMILEeatm7MEaDZsfw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_SUMc8MIMEeatm7MEaDZsfw" memberEnd="_SUNrEsIMEeatm7MEaDZsfw _SUNrE8IMEeatm7MEaDZsfw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SUNrEMIMEeatm7MEaDZsfw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SUNrEcIMEeatm7MEaDZsfw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_SUNrEsIMEeatm7MEaDZsfw" name="gerer les utilisateurs generaux" type="_dOhTYLfCEea3Fv1l_b1ong" association="_SUMc8MIMEeatm7MEaDZsfw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_SUNrE8IMEeatm7MEaDZsfw" name="administrateur general" type="_DW9xcLfAEea3Fv1l_b1ong" association="_SUMc8MIMEeatm7MEaDZsfw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_S7DBkMIMEeatm7MEaDZsfw" memberEnd="_S7E2wMIMEeatm7MEaDZsfw _S7Fd0MIMEeatm7MEaDZsfw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_S7EPsMIMEeatm7MEaDZsfw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_S7EPscIMEeatm7MEaDZsfw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_S7E2wMIMEeatm7MEaDZsfw" name="gerer les utilisateurs locaux" type="__kkIwLe9Eea3Fv1l_b1ong" association="_S7DBkMIMEeatm7MEaDZsfw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_S7Fd0MIMEeatm7MEaDZsfw" name="administrateur local" type="_F5t3gLe_Eea3Fv1l_b1ong" association="_S7DBkMIMEeatm7MEaDZsfw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_66sKcMIMEeatm7MEaDZsfw" name="Lancer une campagne">
+    <extend xmi:type="uml:Extend" xmi:id="_AvNt0MINEeatm7MEaDZsfw" extendedCase="_CHPf4LfJEea3Fv1l_b1ong" extensionLocation="_AvRYMMINEeatm7MEaDZsfw"/>
+    <include xmi:type="uml:Include" xmi:id="_CIjfUMINEeatm7MEaDZsfw" addition="_rV-LwLb9EeawgtDDUI8vZw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_h4W48MINEeatm7MEaDZsfw" memberEnd="_h4bKYMINEeatm7MEaDZsfw _h4bxcMINEeatm7MEaDZsfw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_h4ZVMMINEeatm7MEaDZsfw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h4ajUMINEeatm7MEaDZsfw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_h4bKYMINEeatm7MEaDZsfw" name="preparer un questionnaire" type="_V6-CwLb9EeawgtDDUI8vZw" association="_h4W48MINEeatm7MEaDZsfw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_h4bxcMINEeatm7MEaDZsfw" name="administrateur local" type="_F5t3gLe_Eea3Fv1l_b1ong" association="_h4W48MINEeatm7MEaDZsfw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_invHcMINEeatm7MEaDZsfw" memberEnd="_inw8oMINEeatm7MEaDZsfw _inxjsMINEeatm7MEaDZsfw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_inwVkMINEeatm7MEaDZsfw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_inwVkcINEeatm7MEaDZsfw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_inw8oMINEeatm7MEaDZsfw" name="gerer une campagne" type="_CHPf4LfJEea3Fv1l_b1ong" association="_invHcMINEeatm7MEaDZsfw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_inxjsMINEeatm7MEaDZsfw" name="administrateur local" type="_F5t3gLe_Eea3Fv1l_b1ong" association="_invHcMINEeatm7MEaDZsfw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_jYB78MINEeatm7MEaDZsfw" memberEnd="_jYDxIMINEeatm7MEaDZsfw _jYEYMMINEeatm7MEaDZsfw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jYDKEMINEeatm7MEaDZsfw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jYDKEcINEeatm7MEaDZsfw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_jYDxIMINEeatm7MEaDZsfw" name="visualiser les résultats de la campagne" type="_pQKV0Lb9EeawgtDDUI8vZw" association="_jYB78MINEeatm7MEaDZsfw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_jYEYMMINEeatm7MEaDZsfw" name="administrateur local" type="_F5t3gLe_Eea3Fv1l_b1ong" association="_jYB78MINEeatm7MEaDZsfw"/>
+  </packagedElement>
+</uml:Model>
