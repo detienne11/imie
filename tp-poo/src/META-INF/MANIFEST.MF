@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: fr.imie.cdi13.dav.Test
+Class-Path: Test.jar
+
