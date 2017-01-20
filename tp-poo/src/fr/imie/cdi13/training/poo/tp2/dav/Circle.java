@@ -27,8 +27,8 @@ public class Circle extends Shape {
 
 	@Override
 	public float perimeter() {
-		float perimeter = (float) (2 * Math.PI * this.getRadius());
-		return perimeter;
+		Double d = Double.valueOf(2 * Math.PI * this.getRadius());
+		return d.floatValue();
 	}
 
 }

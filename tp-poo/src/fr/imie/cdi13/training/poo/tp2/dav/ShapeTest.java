@@ -6,7 +6,7 @@ public class ShapeTest {
 		
 		//Rectangle
 		try {
-			Rectangle rectangle = new Rectangle(20,10);
+			Shape rectangle = new Rectangle(20,10);
 			ShapeTest.printAreaOf(rectangle);
 			ShapeTest.printPerimeter(rectangle);
 			
@@ -20,7 +20,7 @@ public class ShapeTest {
 		
 		// Circle
 		try {
-			Circle  circle = new Circle(10);		
+			Shape  circle = new Circle(10);		
 			ShapeTest.printAreaOf(circle);
 			ShapeTest.printPerimeter(circle);
 			
@@ -34,7 +34,7 @@ public class ShapeTest {
 		// Square
 		try {
 			
-			Square  square = new Square(0);		
+			Shape  square = new Square(0);		
 			ShapeTest.printAreaOf(square);
 			ShapeTest.printPerimeter(square);
 			
@@ -47,7 +47,7 @@ public class ShapeTest {
 		
 		// Triangle
 		try {
-			Triangle triangle = new Triangle(10,5,10);		
+			Shape triangle = new Triangle(10,5,10);		
 			ShapeTest.printAreaOf(triangle);
 			ShapeTest.printPerimeter(triangle);
 			
@@ -61,7 +61,7 @@ public class ShapeTest {
 		// RegularPolygon
 		try {
 			//RectugalarPolygon
-			RegularPolygon  regularPolygon = new RegularPolygon(8,2,5);		
+			Shape  regularPolygon = new RegularPolygon(8,2,5);		
 			ShapeTest.printAreaOf(regularPolygon);
 			ShapeTest.printPerimeter(regularPolygon);
 			
