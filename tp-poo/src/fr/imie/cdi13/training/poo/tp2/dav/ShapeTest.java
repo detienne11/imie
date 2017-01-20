@@ -81,10 +81,10 @@ public class ShapeTest {
 	}
 	
 	public static void printAreaOf(final Shape s) {
-		System.out.println(s.getClass().getName() + "  " + String.format("aire : %f", s.area()));
+		System.out.println(s.getClass().getSimpleName() + "  " + String.format("aire : %f", s.area()));
 	}
 	
 	public static void printPerimeter(final Shape s) {
-		System.out.println(String.format(s.getClass().getName() + "  " + "perimetre: %f", s.perimeter()));
+		System.out.println(String.format(s.getClass().getSimpleName() + "  " + "perimetre: %f", s.perimeter()));
 	}
 }
