@@ -1,5 +1,8 @@
 package fr.imie.cdi13.training.poo.tp2.dav;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Triangle extends Shape {
 
 	private float side1;
@@ -34,7 +37,11 @@ public class Triangle extends Shape {
 		this.side3 = side3;
 	}
 
-	public Triangle(float side1, float side2, float side3) {
+	public Triangle(float...value) {		
+		this(value[0],value[1],value[2]);
+	}
+	
+	private Triangle(float side1, float side2, float side3) {
 
 		if (side1 <=0
 				|| side2 <=0
@@ -67,4 +74,12 @@ public class Triangle extends Shape {
 		return perimeter;
 	}
 
+	public static List<String> parameters() {
+		List<String> liste = new ArrayList<>();
+		liste.add("side1");
+		liste.add("side2");
+		liste.add("side3");
+		return liste;
+	}
+	
 }

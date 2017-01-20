@@ -12,7 +12,11 @@ public class Circle extends Shape {
 		this.radius = radius;
 	}
 
-	public Circle(float radius) {
+	public Circle(float...value) {
+		this(value[0]);
+	}
+	
+	private Circle(float radius) {
 		if (radius <=0) {
 			throw new IllegalArgumentException("Circle : Un cercle ne peut avoir qu'un rayon supérieur à zéro");			
 		}

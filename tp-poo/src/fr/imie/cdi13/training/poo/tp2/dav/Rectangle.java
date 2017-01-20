@@ -1,5 +1,8 @@
 package fr.imie.cdi13.training.poo.tp2.dav;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Rectangle extends Shape {
 
 	private float width;
@@ -22,7 +25,11 @@ public class Rectangle extends Shape {
 		this.height = height;
 	}
 
-	public Rectangle(float width, float height) {
+	public Rectangle(float...value) {
+		this(value[0],value[1]);
+	}
+	
+	private Rectangle(float width, float height) {
 		if (width <=0
 				|| height <=0) {
 			throw new IllegalArgumentException("Rectangle : Un rectangle a une largeur ou longueur supérieur à zéro");
@@ -42,6 +49,13 @@ public class Rectangle extends Shape {
 	public float perimeter() {
 		float perimeter = (this.getHeight() + this.getWidth()) * 2;
 		return perimeter;
+	}
+	
+	public static List<String> parameters() {
+		List<String> liste = new ArrayList<>();
+		liste.add("width");
+		liste.add("height");
+		return liste;
 	}
 
 }
