@@ -6,7 +6,7 @@ public class B extends A {
 	
 	@Override
 	public AInterface function1(String value) {
-		// TODO Auto-generated method stub
+		// new commentaire
 		return  new B();
 		
 	}
