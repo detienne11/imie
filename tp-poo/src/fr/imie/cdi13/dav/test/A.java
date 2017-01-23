@@ -7,6 +7,7 @@ public abstract class A implements AInterface {
 		// test1
 
 		// test 2
+		// test 2
 	}
 	
 }
