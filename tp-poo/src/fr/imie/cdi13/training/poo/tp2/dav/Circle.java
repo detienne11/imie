@@ -1,6 +1,9 @@
 package fr.imie.cdi13.training.poo.tp2.dav;
 
-public class Circle extends Shape {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Circle implements IShape {
 
 	private float radius;
 	
@@ -33,6 +36,24 @@ public class Circle extends Shape {
 	public float perimeter() {
 		Double d = Double.valueOf(2 * Math.PI * this.getRadius());
 		return d.floatValue();
+	}
+	
+	public static List<String> parameters() {
+		List<String> liste = new ArrayList<>();
+		liste.add("radius");
+		return liste;
+	}
+	
+	@Override
+	public List<String> listerParameters() {
+		List<String> liste = new ArrayList<>();
+		liste.add("radius=" + this.radius);
+		return liste;
+	}
+	
+	@Override
+	public void initShape(float... value) {
+		this.radius=value[0];
 	}
 
 }

@@ -3,7 +3,7 @@ package fr.imie.cdi13.training.poo.tp2.dav;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Triangle extends Shape {
+public class Triangle  implements IShape {
 
 	private float side1;
 	
@@ -37,7 +37,11 @@ public class Triangle extends Shape {
 		this.side3 = side3;
 	}
 
-	public Triangle(float...value) {		
+	public Triangle() {
+		
+	}
+	
+	private Triangle(float...value) {		
 		this(value[0],value[1],value[2]);
 	}
 	
@@ -80,6 +84,22 @@ public class Triangle extends Shape {
 		liste.add("side2");
 		liste.add("side3");
 		return liste;
+	}
+	
+	@Override
+	public List<String> listerParameters() {
+		List<String> liste = new ArrayList<>();
+		liste.add("side1="+ this.side1);
+		liste.add("side2="+ this.side2);
+		liste.add("side3="+ this.side3);
+		return liste;
+	}
+	
+	@Override
+	public void initShape(float... value) {
+		this.side1=value[0];
+		this.side2=value[1];
+		this.side3=value[2];
 	}
 	
 }
