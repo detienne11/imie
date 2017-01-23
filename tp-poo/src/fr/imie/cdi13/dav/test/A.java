@@ -4,7 +4,7 @@ public abstract class A implements AInterface {
 
 	
 	public A() {
-		
+		// test1
 	}
 	
 }
