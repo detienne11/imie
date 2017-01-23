@@ -8,6 +8,8 @@ public class B extends A {
 	public AInterface function1(String value) {
 
 		// new commentaire
+		
+		// commentaire 2
 
 		return  new B();
 		
