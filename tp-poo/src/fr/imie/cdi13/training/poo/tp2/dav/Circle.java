@@ -15,7 +15,11 @@ public class Circle implements IShape {
 		this.radius = radius;
 	}
 
-	public Circle(float...value) {
+	public Circle() {
+		
+	}
+	
+	private Circle(float...value) {
 		this(value[0]);
 	}
 	

@@ -66,7 +66,7 @@ public class Triangle  implements IShape {
 
 	@Override
 	public float area() {
-		float p = this.perimeter();
+		float p = this.perimeter()/2;
 		float tmp = p * (p - this.getSide1())* (p - this.getSide2())* (p - this.getSide3());
 		float area = (float) Math.sqrt(tmp);
 		return area;
@@ -74,7 +74,7 @@ public class Triangle  implements IShape {
 
 	@Override
 	public float perimeter() {
-		float perimeter = (this.getSide1() + this.getSide2() + this.getSide3()) / 2;
+		float perimeter = (this.getSide1() + this.getSide2() + this.getSide3());
 		return perimeter;
 	}
 
