@@ -6,7 +6,10 @@ public class B extends A {
 	
 	@Override
 	public AInterface function1(String value) {
+<<<<<<< HEAD
 		// new commentaire
+=======
+>>>>>>> branch 'master' of https://github.com/detienne11/imie.git
 		return  new B();
 		
 	}
