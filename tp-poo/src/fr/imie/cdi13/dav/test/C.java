@@ -7,6 +7,8 @@ public class C extends A {
 		// TODO Auto-generated method stub
 		
 		// complemnet L2
+		
+		// commentaire supplentaire L1
 		return  new C();
 		
 	}
