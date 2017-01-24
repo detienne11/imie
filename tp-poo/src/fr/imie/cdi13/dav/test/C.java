@@ -6,7 +6,7 @@ public class C extends A {
 	public AInterface function1(String value) {
 		// TODO Auto-generated method stub
 		
-		// complemnet L2
+		// L1 bis
 		
 		// commentaire supplentaire L1
 		return  new C();
