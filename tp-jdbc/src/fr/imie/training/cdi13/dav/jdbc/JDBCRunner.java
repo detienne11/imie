@@ -1,16 +1,16 @@
-package fr.imie.cdi13.training.jdbc.dav;
+package fr.imie.training.cdi13.dav.jdbc;
 
-import fr.imie.cdi13.training.jdbc.dav.ui.TP0ApplicationImpl;
-import fr.imie.cdi13.training.jdbc.dav.ui.Tp1ApplicationImpl;
-import fr.imie.cdi13.training.jdbc.dav.ui.Tp2ApplicationImpl;
+import fr.imie.training.cdi13.dav.jdbc.ui.TP0ApplicationImpl;
+import fr.imie.training.cdi13.dav.jdbc.ui.Tp1ApplicationImpl;
+import fr.imie.training.cdi13.dav.jdbc.ui.Tp2ApplicationImpl;
 
 public class JDBCRunner {
 
 	public static void main(String[] args) {
 
-		JDBCRunner.runApp(new TP0ApplicationImpl());
-		
-		JDBCRunner.runApp(new Tp1ApplicationImpl());
+//		JDBCRunner.runApp(new TP0ApplicationImpl());
+//		
+//		JDBCRunner.runApp(new Tp1ApplicationImpl());
 		
 		JDBCRunner.runApp(new Tp2ApplicationImpl());
 

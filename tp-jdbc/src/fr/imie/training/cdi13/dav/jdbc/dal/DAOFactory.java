@@ -1,18 +1,15 @@
-package fr.imie.cdi13.training.jdbc.dav.dal;
+package fr.imie.training.cdi13.dav.jdbc.dal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import fr.imie.cdi13.training.jdbc.dav.dal.dao.DAO;
-import fr.imie.cdi13.training.jdbc.dav.dal.dao.EtablissementDAO;
-import fr.imie.cdi13.training.jdbc.dav.dal.dao.impl.EtablissementDAOImpl;
+import fr.imie.training.cdi13.dav.jdbc.dal.DAO.DAO_TYPE;
+import fr.imie.training.cdi13.dav.jdbc.dal.dao.impl.EtablissementDAOImpl;
+import fr.imie.training.cdi13.dav.jdbc.model.DTO;
+import fr.imie.training.cdi13.dav.jdbc.model.dto.EtablissementDTO;
 
 public class DAOFactory {
-
-	public static enum LISTE_DAO {
-		ETABLISSEMENT, ADMINISTRATEUR
-	};
 
 	private static DAOFactory instance = null;
 
@@ -35,8 +32,7 @@ public class DAOFactory {
 
 	public final void openConnection() {
 		try {
-			if (this.connection == null
-					|| this.connection.isClosed()) {
+			if (this.connection == null || this.connection.isClosed()) {
 
 				this.connection = DriverManager.getConnection("jdbc:postgresql://10.1.2.72:5432/jdbcfcpe", "postgres",
 						"postgres");
@@ -58,19 +54,29 @@ public class DAOFactory {
 		}
 	}
 
-	public EtablissementDAO getEtablissementDAO() {
-		return new EtablissementDAOImpl(this.getConnection());
-	}
-
-	public DAO getDAO(LISTE_DAO daoType) {
+	public DAO getDAO(DAO_TYPE daoType) throws DALException {
 
 		DAO dao = null;
 
-		switch (daoType) {
-		case ETABLISSEMENT:
+		if (daoType == DAO_TYPE.ETABLISSEMENT) {
 			dao = new EtablissementDAOImpl(this.getConnection());
-			break;
+		} else {
+			throw new DALException("DAO inexistant");
 		}
+
+		return dao;
+	}
+
+	public DAO getDAO(DTO dto) throws DALException {
+
+		DAO dao = null;
+
+		if (dto instanceof EtablissementDTO) {
+			dao = this.getDAO(DAO_TYPE.ETABLISSEMENT);
+		} else {
+			throw new DALException("DAO inexistant");
+		}
+
 		return dao;
 	}
 

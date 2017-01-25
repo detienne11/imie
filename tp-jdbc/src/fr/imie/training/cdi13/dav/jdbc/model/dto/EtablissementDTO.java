@@ -1,4 +1,9 @@
-package fr.imie.cdi13.training.jdbc.dav.dto;
+package fr.imie.training.cdi13.dav.jdbc.model.dto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.imie.training.cdi13.dav.jdbc.model.DTO;
 
 public class EtablissementDTO implements DTO {
 
@@ -66,6 +71,16 @@ public class EtablissementDTO implements DTO {
 	public String toString() {
 		return "EtablissementDTO [id=" + id + ", nom=" + nom + ", numRue=" + numRue + ", nomRue=" + nomRue
 				+ ", codePostal=" + codePostal + ", ville=" + ville + "]";
+	}
+	
+	public static List<String> parameters() {
+		List<String> liste = new ArrayList<>();
+		liste.add("nom");
+		liste.add("numRue");
+		liste.add("nomRue");
+		liste.add("codePostal");
+		liste.add("ville");
+		return liste;
 	}
 	
 }

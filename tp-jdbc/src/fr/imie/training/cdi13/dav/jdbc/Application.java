@@ -1,4 +1,4 @@
-package fr.imie.cdi13.training.jdbc.dav;
+package fr.imie.training.cdi13.dav.jdbc;
 
 public interface Application {
 

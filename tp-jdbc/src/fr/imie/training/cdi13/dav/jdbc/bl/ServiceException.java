@@ -1,4 +1,4 @@
-package fr.imie.cdi13.training.jdbc.dav.bl;
+package fr.imie.training.cdi13.dav.jdbc.bl;
 
 public class ServiceException extends Exception {
 

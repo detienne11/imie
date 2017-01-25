@@ -1,4 +1,4 @@
-package fr.imie.cdi13.training.jdbc.dav.ui;
+package fr.imie.training.cdi13.dav.jdbc.ui;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import fr.imie.cdi13.training.jdbc.dav.Application;
-import fr.imie.cdi13.training.jdbc.dav.ApplicationException;
+import fr.imie.training.cdi13.dav.jdbc.Application;
+import fr.imie.training.cdi13.dav.jdbc.ApplicationException;
 
 public class TP0ApplicationImpl implements Application {
 
