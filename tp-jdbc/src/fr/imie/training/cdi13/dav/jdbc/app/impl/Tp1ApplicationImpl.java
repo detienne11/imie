@@ -1,12 +1,12 @@
-package fr.imie.training.cdi13.dav.jdbc.ui;
+package fr.imie.training.cdi13.dav.jdbc.app.impl;
 
 import java.util.List;
 
-import fr.imie.training.cdi13.dav.jdbc.Application;
-import fr.imie.training.cdi13.dav.jdbc.ApplicationException;
+import fr.imie.training.cdi13.dav.jdbc.app.Application;
+import fr.imie.training.cdi13.dav.jdbc.app.ApplicationException;
 import fr.imie.training.cdi13.dav.jdbc.dal.DALException;
-import fr.imie.training.cdi13.dav.jdbc.dal.DAO;
 import fr.imie.training.cdi13.dav.jdbc.dal.DAOFactory;
+import fr.imie.training.cdi13.dav.jdbc.dal.dao.DAO;
 import fr.imie.training.cdi13.dav.jdbc.dal.dao.EtablissementDAO;
 import fr.imie.training.cdi13.dav.jdbc.model.DTO;
 

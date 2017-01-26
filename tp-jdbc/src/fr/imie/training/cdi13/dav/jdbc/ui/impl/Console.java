@@ -1,4 +1,4 @@
-package fr.imie.training.cdi13.dav.jdbc.ui;
+package fr.imie.training.cdi13.dav.jdbc.ui.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +20,7 @@ public class Console {
 		str.append("\t- 2 : creer\n");
 		str.append("\t- 3 : modifier\n");
 		str.append("\t- 4 : supprimer\n");
+		str.append("\t- q : exit\n");
 		
 		str.append("------------------------------------------------------------------------------------\n");
 		str.append("Saisissez votre choix :");
@@ -55,7 +56,7 @@ public class Console {
 		boolean selection = false;
 		while (!selection) {
 
-			System.out.println(msg);
+			System.out.print(msg);
 
 			reponse = sc.nextLine();
 			if (Pattern.matches("^q$", reponse)) {

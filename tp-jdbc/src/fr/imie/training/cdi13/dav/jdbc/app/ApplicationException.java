@@ -1,4 +1,4 @@
-package fr.imie.training.cdi13.dav.jdbc;
+package fr.imie.training.cdi13.dav.jdbc.app;
 
 public class ApplicationException extends Exception {
 

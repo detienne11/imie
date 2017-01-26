@@ -1,8 +1,12 @@
 package fr.imie.training.cdi13.dav.jdbc.bl;
 
-import fr.imie.training.cdi13.dav.jdbc.bl.impl.AcademyService;
 import fr.imie.training.cdi13.dav.jdbc.dal.DAOFactory;
 
+/**
+ * 
+ * @author detienne
+ * @deprecated
+ */
 public class ServiceFactory {
 
 	private static ServiceFactory instance = null;
@@ -20,14 +24,20 @@ public class ServiceFactory {
 
 	public Service getService(Service.SERVICE_TYPE serviceType) throws ServiceException {
 
-		Service dao = null;
+		Service srv = null;
 
-		if (serviceType == Service.SERVICE_TYPE.ACADEMIE) {
-			dao = new AcademyService(DAOFactory.getInstance());
+		if (serviceType == Service.SERVICE_TYPE.ACADEMY) {
+//			dao = new AcademyService(DAOFactory.getInstance());
+			try {				
+				srv = (Service) Class.forName("fr.imie.training.cdi13.dav.jdbc.bl.impl.AcademyService").newInstance();
+//				srv.init(DAOFactory.getInstance());
+			} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+				throw new ServiceException("Service implementation inexistante");
+			}
 		} else {
-			throw new ServiceException("DAO inexistant");
+			throw new ServiceException("Service inexistant");
 		}
 
-		return dao;
+		return srv;
 	}
 }

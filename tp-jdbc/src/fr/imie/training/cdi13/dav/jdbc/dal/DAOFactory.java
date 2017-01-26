@@ -4,11 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import fr.imie.training.cdi13.dav.jdbc.dal.DAO.DAO_TYPE;
-import fr.imie.training.cdi13.dav.jdbc.dal.dao.impl.EtablissementDAOImpl;
+import fr.imie.training.cdi13.dav.jdbc.dal.dao.DAO;
+import fr.imie.training.cdi13.dav.jdbc.dal.dao.DAO.DAO_TYPE;
 import fr.imie.training.cdi13.dav.jdbc.model.DTO;
 import fr.imie.training.cdi13.dav.jdbc.model.dto.EtablissementDTO;
 
+/**
+ * 
+ * @author detienne
+ * @deprecated
+ */
 public class DAOFactory {
 
 	private static DAOFactory instance = null;
@@ -59,7 +64,13 @@ public class DAOFactory {
 		DAO dao = null;
 
 		if (daoType == DAO_TYPE.ETABLISSEMENT) {
-			dao = new EtablissementDAOImpl(this.getConnection());
+			 try {
+				dao = (DAO) Class.forName("fr.imie.training.cdi13.dav.jdbc.dal.dao.impl.EtablissementDAOImpl").newInstance();
+//				dao.init(this.getConnection());
+			} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+				throw new DALException("DAO implementation introuvable inexistant");
+			}
+//			dao = new EtablissementDAOImpl(this.getConnection());
 		} else {
 			throw new DALException("DAO inexistant");
 		}

@@ -1,12 +1,16 @@
 package fr.imie.training.cdi13.dav.jdbc.bl;
 
 import java.util.List;
+import java.util.Map;
 
+import fr.imie.training.cdi13.dav.jdbc.dal.dao.DAO;
 import fr.imie.training.cdi13.dav.jdbc.model.DTO;
 
 public interface Service {
 	
-	public enum SERVICE_TYPE {ACADEMIE};
+	public enum SERVICE_TYPE {ACADEMY};
+	
+	public void init(Map<DAO.DAO_TYPE,DAO> daoMap);
 
 	public List<DTO> listerEtablissement() throws ServiceException;
 

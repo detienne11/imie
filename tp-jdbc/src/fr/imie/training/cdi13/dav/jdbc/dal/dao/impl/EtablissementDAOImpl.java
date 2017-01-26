@@ -8,23 +8,29 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.imie.training.cdi13.dav.jdbc.dal.Datasource;
 import fr.imie.training.cdi13.dav.jdbc.dal.dao.EtablissementDAO;
 import fr.imie.training.cdi13.dav.jdbc.model.DTO;
 import fr.imie.training.cdi13.dav.jdbc.model.dto.EtablissementDTO;
 
 public class EtablissementDAOImpl implements EtablissementDAO {
 
-	private final Connection cnx;
+	private Datasource datasource;
 
-	public EtablissementDAOImpl(Connection cnx) {
-		this.cnx = cnx;
+	public EtablissementDAOImpl() {
 	}
 
-	private Connection getCnx() {
-		return this.cnx;
+	@Override
+	public void init(Datasource datasource) {
+		this.datasource = datasource;
 	}
 
-	private List<DTO> convertToDTO(final ResultSet results) throws SQLException {
+	public Datasource getDatasource() {
+		return this.datasource;
+	}
+
+	@Override
+	public List<DTO> convertToDTO(final ResultSet results) throws SQLException {
 
 		final List<DTO> listeDTO = new ArrayList<>();
 
@@ -45,14 +51,14 @@ public class EtablissementDAOImpl implements EtablissementDAO {
 	public DTO findById(Integer id) {
 
 		DTO record = null;
-
+		Connection connection = null;
 		final String query = "select * from etablissement where id=?";
 		PreparedStatement stmt = null;
 		ResultSet results = null;
 
 		try {
-
-			stmt = this.getCnx().prepareStatement(query);
+			connection = this.getDatasource().openConnection();
+			stmt = connection.prepareStatement(query);
 			stmt.setInt(1, id);
 			results = stmt.executeQuery();
 			List<DTO> records = this.convertToDTO(results);
@@ -64,17 +70,7 @@ public class EtablissementDAOImpl implements EtablissementDAO {
 			System.err.println(e.getMessage());
 		} finally {
 
-			try {
-				if (results != null && !results.isClosed()) {
-					results.close();
-				}
-				if (stmt != null && !stmt.isClosed()) {
-					stmt.close();
-				}
-
-			} catch (SQLException e) {
-				System.err.println(e.getMessage());
-			}
+			this.getDatasource().closeConnection(connection, stmt, results);
 		}
 
 		return record;
@@ -84,33 +80,11 @@ public class EtablissementDAOImpl implements EtablissementDAO {
 	public List<DTO> find() {
 
 		List<DTO> records = null;
-
-		String query = null;
-		Statement stmt = null;
-		ResultSet results = null;
-
+		String query = "select * from etablissement";
 		try {
-
-			query = "select * from etablissement";
-			stmt = this.getCnx().createStatement();
-			results = stmt.executeQuery(query);
-			records = this.convertToDTO(results);
-
+			records = this.getDatasource().executeQuery(query,this);
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
-		} finally {
-
-			try {
-				if (results != null && !results.isClosed()) {
-					results.close();
-				}
-				if (stmt != null && !stmt.isClosed()) {
-					stmt.close();
-				}
-
-			} catch (SQLException e) {
-				System.err.println(e.getMessage());
-			}
 		}
 		return records;
 	}
@@ -120,15 +94,16 @@ public class EtablissementDAOImpl implements EtablissementDAO {
 
 		EtablissementDTO eltDto = (EtablissementDTO) dto;
 
-		String query = null;
+		String query = "insert into etablissement (nom,num_rue,nom_rue,code_postal,ville) values (?,?,?,?,?)";
+		Connection connection = null;
 		PreparedStatement stmt = null;
 		ResultSet resultSet = null;
 		int nbRow;
 
 		try {
 
-			query = "insert into etablissement (nom,num_rue,nom_rue,code_postal,ville) values (?,?,?,?,?)";
-			stmt = this.getCnx().prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+			connection = this.getDatasource().openConnection();
+			stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
 			stmt.setString(1, eltDto.getNom());
 			stmt.setInt(2, eltDto.getNumRue());
@@ -147,19 +122,7 @@ public class EtablissementDAOImpl implements EtablissementDAO {
 			System.err.println(e.getMessage());
 		} finally {
 
-			try {
-
-				if (resultSet != null && !resultSet.isClosed()) {
-					resultSet.close();
-				}
-
-				if (stmt != null && !stmt.isClosed()) {
-					stmt.close();
-				}
-
-			} catch (SQLException e) {
-				System.err.println(e.getMessage());
-			}
+			this.getDatasource().closeConnection(connection, stmt, null);
 		}
 
 		return eltDto;
@@ -170,15 +133,15 @@ public class EtablissementDAOImpl implements EtablissementDAO {
 	public void update(DTO dto) {
 
 		EtablissementDTO eltDto = (EtablissementDTO) dto;
-
-		String query = null;
+		Connection connection = null;
+		final String query = "update etablissement set nom=?,num_rue=?,nom_rue=?,code_postal=?,ville=? where id=?";
 		PreparedStatement stmt = null;
 		int results;
 
 		try {
 
-			query = "update etablissement set nom=?,num_rue=?,nom_rue=?,code_postal=?,ville=? where id=?";
-			stmt = this.getCnx().prepareStatement(query);
+			connection = this.getDatasource().openConnection();
+			stmt = connection.prepareStatement(query);
 
 			stmt.setString(1, eltDto.getNom());
 			stmt.setInt(2, eltDto.getNumRue());
@@ -192,15 +155,7 @@ public class EtablissementDAOImpl implements EtablissementDAO {
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		} finally {
-
-			try {
-				if (stmt != null && !stmt.isClosed()) {
-					stmt.close();
-				}
-
-			} catch (SQLException e) {
-				System.err.println(e.getMessage());
-			}
+			this.getDatasource().closeConnection(connection, stmt, null);
 		}
 
 	}
@@ -208,15 +163,15 @@ public class EtablissementDAOImpl implements EtablissementDAO {
 	@Override
 	public void delete(DTO dto) {
 		EtablissementDTO eltDto = (EtablissementDTO) dto;
-
-		String query = null;
+		Connection connection = null;
+		String query = "delete from etablissement where id=?";
 		PreparedStatement stmt = null;
 		int results;
 
 		try {
 
-			query = "delete from etablissement where id=?";
-			stmt = this.getCnx().prepareStatement(query);
+			connection = this.getDatasource().openConnection();
+			stmt = connection.prepareStatement(query);
 
 			stmt.setInt(1, eltDto.getId());
 
@@ -225,15 +180,7 @@ public class EtablissementDAOImpl implements EtablissementDAO {
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
 		} finally {
-
-			try {
-				if (stmt != null && !stmt.isClosed()) {
-					stmt.close();
-				}
-
-			} catch (SQLException e) {
-				System.err.println(e.getMessage());
-			}
+			this.getDatasource().closeConnection(connection, stmt, null);
 		}
 
 	}

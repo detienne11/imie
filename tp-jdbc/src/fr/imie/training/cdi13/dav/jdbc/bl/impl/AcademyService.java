@@ -1,28 +1,33 @@
 package fr.imie.training.cdi13.dav.jdbc.bl.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import fr.imie.training.cdi13.dav.jdbc.bl.Service;
 import fr.imie.training.cdi13.dav.jdbc.bl.ServiceException;
 import fr.imie.training.cdi13.dav.jdbc.dal.DALException;
-import fr.imie.training.cdi13.dav.jdbc.dal.DAO;
-import fr.imie.training.cdi13.dav.jdbc.dal.DAOFactory;
+import fr.imie.training.cdi13.dav.jdbc.dal.dao.DAO;
 import fr.imie.training.cdi13.dav.jdbc.model.DTO;
+import fr.imie.training.cdi13.dav.jdbc.model.dto.EtablissementDTO;
 
 public class AcademyService implements Service {
 
-	private final DAOFactory daoFactory;
+	private Map<DAO.DAO_TYPE, DAO> daoMap;
 
-	public AcademyService(DAOFactory daoFactory) {
-		this.daoFactory = daoFactory;
+	public AcademyService() {
+
+	}
+
+	@Override
+	public void init(Map<DAO.DAO_TYPE, DAO> daoMap) {
+		this.daoMap = daoMap;
 	}
 
 	@Override
 	public DTO findById(Integer id) throws ServiceException {
-		final DAO dao;
-		final DTO newDto;
+		final DAO dao = this.getDao(DAO.DAO_TYPE.ETABLISSEMENT);
+		DTO newDto;
 		try {
-			dao = this.daoFactory.getDAO(DAO.DAO_TYPE.ETABLISSEMENT);
 			newDto = dao.findById(id);
 		} catch (DALException e) {
 			throw new ServiceException(e.getMessage());
@@ -30,16 +35,35 @@ public class AcademyService implements Service {
 		return newDto;
 	}
 
-	
+	private final DAO getDao(DAO.DAO_TYPE daoType) throws ServiceException {
+		DAO dao = null;
+		try {
+			dao = this.daoMap.get(daoType);
+		} catch (Exception e) {
+			throw new ServiceException("DAO inexistant :" + e.getMessage());
+		}
+		return dao;
+	}
+
+	private final DAO getDao(DTO dto) throws ServiceException {
+
+		DAO dao = null;
+
+		if (dto instanceof EtablissementDTO) {
+			dao = this.getDao(DAO.DAO_TYPE.ETABLISSEMENT);
+		}
+
+		return dao;
+	}
+
 	@Override
 	public DTO create(DTO dto) throws ServiceException {
-		final DAO dao;
+		final DAO dao = this.getDao(dto);
 		final DTO newDto;
 		try {
-			dao = this.daoFactory.getDAO(dto);
 			newDto = dao.create(dto);
 		} catch (DALException e) {
-			throw new ServiceException(e.getMessage());
+			throw new ServiceException(e);
 		}
 		return newDto;
 	}
@@ -47,11 +71,11 @@ public class AcademyService implements Service {
 	@Override
 	public void update(DTO dto) throws ServiceException {
 
-		final DAO dao;
+		final DAO dao = this.getDao(dto);
 		try {
-			dao = this.daoFactory.getDAO(dto);
 			dao.update(dto);
 		} catch (DALException e) {
+			System.err.println("Business method update : Erreur DALException : " + e.getMessage());
 			throw new ServiceException(e.getMessage());
 		}
 	}
@@ -59,9 +83,8 @@ public class AcademyService implements Service {
 	@Override
 	public void delete(DTO dto) throws ServiceException {
 
-		final DAO dao;
+		final DAO dao = this.getDao(dto);
 		try {
-			dao = this.daoFactory.getDAO(dto);
 			dao.delete(dto);
 		} catch (DALException e) {
 			throw new ServiceException(e.getMessage());
@@ -70,10 +93,9 @@ public class AcademyService implements Service {
 
 	@Override
 	public List<DTO> listerEtablissement() throws ServiceException {
-		final DAO dao;
+		final DAO dao = this.getDao(DAO.DAO_TYPE.ETABLISSEMENT);
 		final List<DTO> liste;
 		try {
-			dao = this.daoFactory.getDAO(DAO.DAO_TYPE.ETABLISSEMENT);
 			liste = dao.find();
 		} catch (DALException e) {
 			throw new ServiceException(e.getMessage());
