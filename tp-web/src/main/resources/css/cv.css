@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+nav {
+	display: inline-block;
+}
+
+.logo {
+	background: url("../img/david-1024.jpg") no-repeat scroll 0 0 transparent;
+	width: 200px;
+	height: 200px;
+}
+
+
+.block-1 {
+    background-color: #06406c;
+}
+
+.block-2 {
+    background-color: #4c0d09;
+}
+
+.block-3 {
+    background-color: #06406c;
+}
+
+.scrollblock {
+    color: white;
+    margin: 0;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    width: 100%;
+}
