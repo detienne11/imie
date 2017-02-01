@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+
+/* DISPLAY */
+.container {
+	margin: 10px;
+	padding: 10px;
+	background-color: #dddddd;
+}
+
+.clear {
+	clear: both;
+}
+
+.elt {
+	background-color: #6dff6d;
+	width: 20%;
+	float: left;
+}
+
+.menu {
+	display: flex;
+	flex-direction: row;
+}
+
+.menu li{
+	background-color: #6dff6d;
+	width: 20 %;
+}
+
+@media (max-width: 600px),(max-device-width: 600px) {
+	.elt {
+		background-color: #d6d6ff;
+		width: 100%;
+		float: none;
+	}
+	.menu {
+		flex-direction: column;
+	}
+	
+	.menu li{
+		background-color: #d6d6ff;
+		width: 100 %;
+	}
+}

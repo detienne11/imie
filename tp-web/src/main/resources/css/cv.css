@@ -1,13 +1,46 @@
 @CHARSET "UTF-8";
 
+body {
+	/*font-family: 'Chelsea Market', cursive;*/
+	font-family: 'Hind', sans-serif;
+}
+
 nav {
 	display: inline-block;
 }
 
+h1 span {
+	font-size: 0.6em;
+	font-style: italic;
+	font-variant: small-caps;
+}
+
+.header-wrapper {
+	background-color: cornflowerblue;
+	witdh:100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.information {
+	background-color: #ededed;
+}
+
+#mobile-menu {
+	display: none;
+}
+
+#menu {
+	display: flex;
+
+}
+#menu li{
+	list-style-type:none;
+}
+
 .logo {
 	background: url("../img/david-1024.jpg") no-repeat scroll 0 0 transparent;
-	width: 200px;
-	height: 200px;
+	background-size: 15%;
 }
 
 
@@ -19,7 +52,7 @@ nav {
     background-color: #4c0d09;
 }
 
-.block-3 {
+.training-box {
     background-color: #06406c;
 }
 
@@ -29,4 +62,13 @@ nav {
     padding-bottom: 80px;
     padding-top: 80px;
     width: 100%;
+}
+@media (max-width: 600px),(max-device-width: 600px) {
+	#menu {
+		display: none;
+		flex-direction: column;
+	}
+	#mobile-menu {
+		display: block;
+	}
 }
