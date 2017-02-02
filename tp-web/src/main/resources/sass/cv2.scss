@@ -1,0 +1,118 @@
+@CHARSET "UTF-8";
+
+@import 'mixins';
+@import 'variables';
+
+body {
+	background: #FFFFFF;
+	/*font-family: 'Chelsea Market', cursive;*/
+	font-family: 'Hind', sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 span {
+	font-size: 0.6em;
+	font-style: italic;
+	font-variant: small-caps;
+}
+.logo {
+	background: url("../img/david-1024.jpg") no-repeat scroll 0 0 transparent;
+	width: 100px;
+	height: 100px;
+	background-color: #ededed;
+	border-radius: 100px;
+}
+header {
+	padding-left: 120px;
+	@include display-flex;
+	@include justify-content(flex-end);
+}
+
+section {
+    color: white;
+    margin: 0;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    width: 100%;
+}
+
+.information {
+	background-color: #ededed;
+}
+
+nav ul {
+	@include display-flex;
+    @include flex-direction(row);
+    li {
+
+ 		list-style-type:none;
+    }
+}
+
+ul.level1 li,ul.level2 li {
+   
+}
+
+ul.level2 {
+	@include display-flex;
+	display: none;
+}
+
+ul.level1 li:hover ul.level2 {
+	display: block;
+}
+
+/*nav ul ul li {
+    display: none;
+}
+
+nav ul ul li:hover ul {
+	display:block;
+}
+
+nav ul ul {
+	@include display-flex;
+	li{
+		display: inline-block;
+		
+		width: $largeur_menu_elt;
+	}	
+}
+
+ul ul {display: none;} */
+
+
+.mobile-menu {
+	display: none;
+}
+
+.menu {
+	display: block;
+}
+
+.block-1 {
+    @include background-color($color1,0);
+}
+
+.block-2 {
+	@include background-color($color2,"grey");
+}
+
+.training-box {
+    @extend .block-1;
+}
+
+
+@media (max-width: 600px),(max-device-width: 600px) {
+	
+	nav ul {
+		@include flex-direction(column);
+	}
+	.menu {
+		display: none;		
+	}
+	.mobile-menu {
+		display: block;
+	}
+}
