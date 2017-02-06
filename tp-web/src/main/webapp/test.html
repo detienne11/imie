@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TP Display</title>
+<link type="text/css" href="../resources/css/test.css" rel="stylesheet" />
+</head>
+<body>
+	<h2>Display</h2>
+	<div id="container-box" class="container">
+		<h3>block</h3>
+		<div class="box1">AAAA</div>
+		<div class="box2">BBBBB</div>
+		<div class="box3">CCC</div>
+	</div>
+	
+	<div id="container-box1" class="container">
+		<h3>inline</h3>
+		<div class="box1">AAAA</div>
+		<div class="box2">BBBBB</div>
+		<div class="box3">CCC</div>
+	</div>
+	
+	<div id="container-box2" class="container">
+		<h3>inline-block</h3>
+		<div class="box1">AAAA</div>
+		<div class="box2">BBBBB</div>
+		<div class="box3">CCC</div>
+	</div>
+	
+	<div class="container">
+		<h3>display table</h3>
+		<main>
+			<section><h3>Section 1</h3>BLA BLA<br/>BLA<br/>BLA BLA<br/><br/>BLA BLA<br/>BLA BLA<br/>BLA BLA</section>
+			<section><h3>Section 2</h3>BLA BLA<br/>BLA<br/>BLA BLA<br/><br/>BLA BLA<br/>BLA BLA<br/>BLA BLA</section>
+			<aside>BLA BLA<br/>BLA</aside>
+		</main>
+	</div>	
+	
+	<h2>Float</h2>
+	<div id="container-float" class="container">
+		<h3>float Right</h3>
+		<div class="boxright box1">AAAA</div>
+		<div class="boxright box2">BBBBB</div>
+		<div class="boxright box3">CCC</div>
+		<div class="boxright box4">DDD</div>
+		<div class="clear"></div>
+	</div>
+	<h3>Sous Titre 1</h3>
+	<div id="container-float2" class="container">
+		<h3>float Left</h3>
+		<div class="boxleft box1">AAAA</div>
+		<div class="boxleft box2">BBBBB</div>
+		<div class="boxleft box3">CCC</div>
+		<div class="boxleft box4">DDD</div>
+		<div class="clear"></div>
+	</div>
+	<h3>Sous Titre 2</h3>
+	
+	<h2>Position</h2>
+	<div id="frame1" class="frame">Position<br/>Static</div>
+	<div id="frame2" class="frame">Position<br/>Relative</div>
+	<div id="frame3" class="frame">Position<br/>Absolute</div>
+	<div id="frame4" class="frame">Position<br/>Fixed</div>
+	
+	
+	
+	<h2>Form</h2>
+	<div class="container">
+		<form action="#">
+			<fieldset>
+				<legend>Personal information:</legend>
+				<label for="in1">Input 1:
+				<input type="text" name="in1" placeholder="Entrez une valeur"></label>
+				
+				<label for="in4">
+					<input type="radio" name="in4" value="male" checked> Male
+	  				<input type="radio" name="in4" value="female"> Female
+	  				<input type="radio" name="in4" value="other"> Other
+	  			</label>
+				
+				<label for="in2">Input 2:
+				
+				<input type="text" name="in2"></label>
+				<label for="in3">Input 3:
+				<input list="listein3" type="text" name="in3"></label>
+				<datalist id="listein3">
+				    <option value="Internet Explorer">
+				    <option value="Firefox">
+				    <option value="Chrome">
+				    <option value="Opera">
+				    <option value="Safari">
+				  </datalist>
+				
+				<input type="submit" value="Valider">		
+				<input type="submit" value="Annuler">
+			</fieldset>
+		</form>
+	</div>
+	
+</body>
+</html>

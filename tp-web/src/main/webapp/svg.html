@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link type="text/css" href="../resources/css/svg.css" rel="stylesheet"/>
+		<title>TP SVG</title>
+	</head>
+<body>
+	<header>
+		<h1>Test SVG</h1>
+	</header>
+	
+	<main>
+		<svg id="test" class="test-svg">
+			<circle cx="100px" cy="75px" r="20px" fill="#666666" stroke="#66FF55" stroke-width="3px" />
+			<rect x="150px" y="100px" width="50px" height="25px" fill="#235687" stroke="#66FF55" stroke-width="10px"/>
+			<line x="10px" y="50px" x2="80px" y2="180px" 
+				stroke-width="1" stroke="#000000" fill="#000000" stroke-opacity="1.000000" fill-opacity="0.000000"/>
+			<polygon points="150,10 200,40 300,180 200,150"/>
+			<image x="100px" y="150px" href="../resources/img/david-1024.jpg"/>
+		</svg>
+		<object class="test-svg"data="../resources/test.svg" codetype="image/svg-xml">
+			<img src="../resources/img/menu.png"/>
+		</object>
+		<object class="test-svg"data="../resources/svg/chart.svg" codetype="image/svg-xml">
+			<img src="../resources/img/menu.png"/>
+		</object>
+	</main>
+	
+	<footer>
+		<p>&copy; 2017 David ETIENNE. All rights reserved.</p>
+	</footer>	
+</body>
+</html>

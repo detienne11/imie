@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+@import 'mixins';
+@import 'variables';
+
+.test-svg {
+	display: block;
+	width: 600px;
+	height: 300px;
+	circle:hover {
+		fill-opacity:0.5;
+		fill:#FF0000;
+	}
+}
+
+polygon {	
+	fill:#ADD8E6;
+	stroke:#0000AA;
+	stroke-width:2px;
+}

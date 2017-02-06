@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+@mixin background-color($color,$condition){
+	background-color: $color;
+	@if $condition=="grey"{
+		background-color: #666666;
+	}
+	& p{
+		color: #EEEEEE;
+	}
+}
+
+@mixin display-flex {
+	display: flex;
+	display: -webkit-flex;
+}
+
+@mixin justify-content($value) {
+	justify-content: $value;
+	-webkit-justify-content: $value;
+}
+
+@mixin flex-direction($value) {
+	flex-direction: $value;
+	-webkit-flex-direction: $value;
+}

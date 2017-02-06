@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+@CHARSET "UTF-8";
+@CHARSET "UTF-8";
+/* line 6, D:/detienne/git/imie/tp-web/src/main/resources/sass/svg.scss */
+.test-svg {
+  display: block;
+  width: 600px;
+  height: 300px;
+}
+
+/* line 10, D:/detienne/git/imie/tp-web/src/main/resources/sass/svg.scss */
+.test-svg circle:hover {
+  fill-opacity: 0.5;
+  fill: #FF0000;
+}
+
+/* line 16, D:/detienne/git/imie/tp-web/src/main/resources/sass/svg.scss */
+polygon {
+  fill: #ADD8E6;
+  stroke: #0000AA;
+  stroke-width: 2px;
+}
+
+/*# sourceMappingURL=../css/svg.map */

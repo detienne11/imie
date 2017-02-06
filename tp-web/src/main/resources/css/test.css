@@ -1,0 +1,141 @@
+@CHARSET "UTF-8";
+
+/* DISPLAY */
+.container {
+	margin: 10px;
+	padding: 10px;
+	background-color: #dddddd;
+}
+
+.container div:not(.clear) {
+	margin: 0px;
+	padding: 0px;
+	width: 100px;
+	height: 50px;
+}
+
+#container-box div {
+	display: block;
+}
+
+#container-box1 div {
+	display: inline;
+}
+
+#container-box2 {
+	font-size: 0;
+}
+
+#container-box2 h3 {
+	font-size: 12pt;
+}
+
+#container-box2 div {
+	display: inline-block;
+	font-size: 12pt;
+}
+
+.box1 {
+	background-color: #2d8bd2;
+}
+
+.box2 {
+	background-color: #ef736b;
+}
+
+.box3 {
+	background-color: #8ec09b;
+}
+
+/* TABLE */
+
+main {
+	display: table;
+	width: 100%;
+}
+
+section {	
+	display: table-cell;
+	background-color: #8ec09b;
+
+}
+
+aside {
+	display: table-cell;
+	background-color: #ef736b;
+	width: 30%;
+}
+
+/* FLOAT */
+.box4 {
+	background-color: #999999;
+	float: none;
+	clear: both;
+}
+
+.boxright {
+	float: right;
+}
+
+.boxleft {
+	float: left;
+}
+
+.clear {
+	clear:both;
+}
+
+#frame {
+	background-color: #2d8bd2;
+	width: 100px;
+	height: 50px;
+	position: relative;
+	top: 10px;
+	left: 10px;
+}
+
+.frame {
+	width: 100px;
+	height: 50px;
+}
+
+#frame1 {
+	background-color: #2d8bd2;
+	position: static;
+}
+
+#frame2 {
+	background-color: #2d8bd2;
+	position: relative;
+	top: 10px;
+	left: 10px;
+}
+
+#frame3 {
+	background-color: #2d8bd2;
+	position: absolute;
+	top: 400px;
+	left: 400px;
+}
+
+#frame4 {
+	background-color: #ef736b;
+	position: fixed;
+	top: 200px;
+	left: 600px;
+}
+
+/* TABLE */
+
+form {
+	display: table;
+	background-color: #666666;
+}
+
+label {	
+	display: table-row;
+}
+
+input {
+	display: table-cell;
+}

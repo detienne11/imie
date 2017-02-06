@@ -1,0 +1,96 @@
+@CHARSET "UTF-8";
+@CHARSET "UTF-8";
+@CHARSET "UTF-8";
+/* line 6, D:/detienne/git/imie/tp-web/src/main/resources/sass/keyframe.scss */
+.frame {
+  background-color: grey;
+  witdh: 300px;
+  height: 300px;
+}
+
+/* line 12, D:/detienne/git/imie/tp-web/src/main/resources/sass/keyframe.scss */
+.rectangle {
+  width: 20%;
+  height: 30px;
+  position: relative;
+  animation: move-box 3s infinite 1s linear;
+}
+
+/* line 19, D:/detienne/git/imie/tp-web/src/main/resources/sass/keyframe.scss */
+.rectangle.style1 {
+  background-color: blue;
+  animation: color-switch 3s infinite 0s linear;
+}
+
+/* line 25, D:/detienne/git/imie/tp-web/src/main/resources/sass/keyframe.scss */
+.rectangle.style2 {
+  background-color: green;
+}
+
+/* line 29, D:/detienne/git/imie/tp-web/src/main/resources/sass/keyframe.scss */
+#skeleton {
+  background-image: url("../img/skeleton.png");
+  width: 64px;
+  height: 64px;
+  background-position: 128px 128px;
+  animation-name: move-img;
+  animation-duration: 1s;
+  animation-timing-function: steps(8);
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+@keyframes move-img {
+  0% {
+    background-position: 128px 128px;
+  }
+  100% {
+    background-position: 640px 128px;
+  }
+}
+
+@keyframes color-switch {
+  from {
+    background-color: red;
+  }
+  50% {
+    background-color: yellow;
+  }
+  to {
+    background-color: red;
+  }
+}
+
+@keyframes move-box {
+  0% {
+    left: 0;
+    bottom: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    left: 80%;
+    bottom: 0;
+    transform: rotate(180deg);
+  }
+  100% {
+    left: 0;
+    bottom: 0;
+    transform: rotate(360deg);
+  }
+}
+
+/* line 76, D:/detienne/git/imie/tp-web/src/main/resources/sass/keyframe.scss */
+#ovale {
+  background-color: red;
+  width: 10%;
+  height: 30px;
+  border-radius: 50%;
+  animation-name: color-switch;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+/*# sourceMappingURL=../css/keyframe.map */
