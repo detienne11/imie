@@ -3,16 +3,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Season</title>
+<title>Autumn</title>
 </head>
 <body>
+<p><a href="tpseason">return</a></p>
+<h2>Autumn</h2>
 
-<h2>
-<%
-	String s = request.getParameter("season");
-	out.print(s);
-%>
-</h2>
+
 
 </body>
 </html>

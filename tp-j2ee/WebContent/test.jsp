@@ -11,8 +11,8 @@ Bonjour <%=System.getProperty("user.name") %><br/>!!
 <%=request.getRemoteAddr()%>
 
 <form action="tp2" method="POST">
-	<input type="text" placeholder="Entrez votre nom" name="nom"/>
-	<input type="text" placeholder="Entrez votre prenom" name="prenom"/>
+	<input type="text" placeholder="Entrez votre nom" name="nom"/><br/>
+	<input type="text" placeholder="Entrez votre prenom" name="prenom"/><br/>
 	<input type="submit" value="Submit" id="button-1"/>
 </form>
 
