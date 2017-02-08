@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private final static String VIEW = "/home.jsp";
+	private final static String VIEW = "/WEB-INF/views/home.jsp";
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

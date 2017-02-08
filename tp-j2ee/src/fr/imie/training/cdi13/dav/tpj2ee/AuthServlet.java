@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 public class AuthServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	private final static String VIEW = "/WEB-INF/views/login.jsp";
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -30,7 +31,7 @@ public class AuthServlet extends HttpServlet {
 		String uri = request.getRequestURI();
 		
 		if (Pattern.matches("^.*/login$", uri)) {
-			request.getRequestDispatcher("/login.jsp").forward(request, response);			
+			request.getRequestDispatcher(VIEW).forward(request, response);			
 		}
 		else if (Pattern.matches("^.*/logon$", uri)) {
 			
@@ -56,7 +57,7 @@ public class AuthServlet extends HttpServlet {
 			}
 			else {
 				request.setAttribute("user-check", "login ou mot de passe incorrect");
-				request.getRequestDispatcher("/login.jsp").forward(request, response);
+				request.getRequestDispatcher(VIEW).forward(request, response);
 			}
 			
 		}
@@ -69,7 +70,7 @@ public class AuthServlet extends HttpServlet {
 		}
 		else {
 			request.setAttribute("error", "Page inconnu");
-			request.getRequestDispatcher("/login.jsp").forward(request, response);
+			request.getRequestDispatcher(VIEW).forward(request, response);
 		}
 
 		

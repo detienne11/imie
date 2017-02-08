@@ -15,6 +15,8 @@ import javax.servlet.http.HttpSession;
 public class SessionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	private final static String VIEW = "/WEB-INF/views/tpj2ee/session.jsp";
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -28,7 +30,7 @@ public class SessionServlet extends HttpServlet {
 		}
 		session.setAttribute("nbVisite",Integer.valueOf(++counter));
 		
-		request.getRequestDispatcher("/tpj2ee/session.jsp").forward(request, response);
+		request.getRequestDispatcher(VIEW).forward(request, response);
 	}
 
 	/**

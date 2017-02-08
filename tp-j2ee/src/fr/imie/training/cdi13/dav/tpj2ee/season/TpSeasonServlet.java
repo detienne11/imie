@@ -14,11 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 public class TpSeasonServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	private final static String VIEW = "/WEB-INF/views/season/tpseason.jsp";
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/season/tpseason.jsp").forward(request, response);
+		request.getRequestDispatcher(VIEW).forward(request, response);
 	}
 
 	/**

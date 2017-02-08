@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 public class TP2Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	private final static String VIEW = "/WEB-INF/views/tp2.jsp";
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -58,7 +60,7 @@ public class TP2Servlet extends HttpServlet {
 				.append("<br/>");
 		}
 		
-		request.getRequestDispatcher("/tp2.jsp").forward(request, response);
+		request.getRequestDispatcher(VIEW).forward(request, response);
 
 	}
 

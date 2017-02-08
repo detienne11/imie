@@ -1,5 +1,13 @@
 @CHARSET "UTF-8";
 
+.pair {
+	background: #dddddd;
+}
+
+.impair {
+	background: #666666;
+}
+
 table {
 	border-spacing:0px;
 
@@ -15,4 +23,12 @@ td {
 
 .red {
 	color: #FF0000;
+}
+
+.logo {
+  background: url("resources/img/imie.png") no-repeat scroll 0 0 transparent;
+  width: 100px;
+  height: 100px;
+  background-color: #ededed;
+  border-radius: 100px;
 }

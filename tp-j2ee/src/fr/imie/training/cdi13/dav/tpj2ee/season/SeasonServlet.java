@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 public class SeasonServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	private final static String VIEW_PATH = "/WEB-INF/views/season/";
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -23,9 +25,9 @@ public class SeasonServlet extends HttpServlet {
 
 		String season = request.getParameter("season");
 		
-		String jsp = "/season/season.jsp";
+		String jsp = VIEW_PATH + "season.jsp";
 		if (season != null) {
-			jsp = String.format("/season/%s.jsp",season.toLowerCase());
+			jsp = String.format(VIEW_PATH + "%s.jsp",season.toLowerCase());
 		}		
 
 		request.getRequestDispatcher(jsp).forward(request, response);

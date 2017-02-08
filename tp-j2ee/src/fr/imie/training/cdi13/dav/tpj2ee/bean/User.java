@@ -6,6 +6,12 @@ public class User {
 	
 	private String prenom;
 
+	public User() {
+		super();
+		this.nom = "Dark";
+		this.prenom = "Vador";
+	}
+	
 	public User(String nom, String prenom) {
 		super();
 		this.nom = nom;
