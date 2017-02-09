@@ -73,39 +73,10 @@
 	</p>
 
 	<p>
-	<h2>User 1 : Scriplet</h2>
-	<%
-		User user = new User("Donald", "TRUMP");
-	%>
-	<h3><%=user.toString()%></h3>
-	<%
-		user.setNom("François");
-		user.setPrenom("FILLON");
-	%>
-	<h3><%=user.toString()%></h3>
-	</p>
-
-	<p>
-	<h2>User 2 : jsp:scriplet</h2>
-	<jsp:declaration></jsp:declaration>
 	
-	<jsp:scriptlet>
-	User u2 = (User) session.getAttribute("u2");
-	if (u2 == null) {
-		u2 = new User("Luke","Skywalker");
-		session.setAttribute("u2",u2);	
-	}
-	</jsp:scriptlet>
-	<jsp:expression>u2.getNom()</jsp:expression>
-
-	</p>
 
 	<p>
-		<h2>User 3 : UseBean</h2>
-		<jsp:useBean id="u3" scope="page"
-			class="fr.imie.training.cdi13.dav.tpj2ee.bean.User" />
-		<jsp:getProperty name="u3" property="nom" />
-		<jsp:getProperty name="u3" property="prenom" />
+
 	</p>
 
 </body>

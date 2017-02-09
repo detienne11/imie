@@ -1,43 +1,21 @@
 @CHARSET "UTF-8";
 
 /* line 6, D:/detienne/git/imie/tp-web/src/main/resources/sass/cv2.scss */
-body {
-  background: #00eded;
-  /*font-family: 'Chelsea Market', cursive;*/
-  font-family: 'Hind', sans-serif;
-  margin: 0px;
-  padding: 0px;
-}
+
 
 /* line 14, D:/detienne/git/imie/tp-web/src/main/resources/sass/cv2.scss */
-h1 span {
-  font-size: 0.6em;
-  font-style: italic;
-  font-variant: small-caps;
-}
+
 
 
 /* line 26, D:/detienne/git/imie/tp-web/src/main/resources/sass/cv2.scss */
-header {
-  padding-left: 120px;
-  display: flex;
-  display: -webkit-flex;
-  justify-content: flex-end;
-  -webkit-justify-content: flex-end;
-}
+
 
 /* line 32, D:/detienne/git/imie/tp-web/src/main/resources/sass/cv2.scss */
 section {
-  color: white;
   margin: 0;
   padding-bottom: 80px;
   padding-top: 80px;
   width: 100%;
-}
-
-/* line 40, D:/detienne/git/imie/tp-web/src/main/resources/sass/cv2.scss */
-.information {
-  background-color: #ededed;
 }
 
 /* line 44, D:/detienne/git/imie/tp-web/src/main/resources/sass/cv2.scss */

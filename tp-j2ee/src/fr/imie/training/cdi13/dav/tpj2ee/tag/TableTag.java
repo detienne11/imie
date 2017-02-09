@@ -35,13 +35,14 @@ public class TableTag extends SimpleTagSupport {
 		
 		StringBuffer str = new StringBuffer();
 		str.append("<table>\n");
+		str.append("\t<caption>Tableau</caption>\n");
 		str.append("\t<thead><tr><th>col1</th><th>col2</th></tr></thead>\n");
 		str.append("\t<tbody>\n");
 		List<Object> list = this.getList();
 		if (list != null) {
 			boolean pair = true;
 			for (int i = 0; i < list.size(); i++) {
-				str.append("\t\t<tr class=\"");
+				str.append("\t\t<tr class=\"line ");
 				pair = !pair;
 				if (pair){					
 					str.append("pair");
