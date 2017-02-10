@@ -4,20 +4,28 @@ import fr.imie.training.cdi13.dav.j2ee.model.DTO;
 
 public class UserDTO implements DTO {
 
+	public final static String ID = "id";
+	public final static String NOM = "nom";
+	public final static String PRENOM = "prenom";
+	public final static String ACTIF = "est_actif";
+	public final static String CONNECTION_ID = "id_connexion";
+	public final static String PASSWORD = "mot_de_passe";
+	public final static String EMAIL = "email";
+
 	private Integer id = null;
-	
+
 	private String nom = null;
-	
+
 	private String prenom = null;
-	
+
 	private Boolean actif = null;
-	
+
 	private String connectionId = null;
-	
-	private Boolean password = null;
-	
+
+	private String password = null;
+
 	private String email = null;
-	
+
 	public UserDTO() {
 		super();
 	}
@@ -62,11 +70,11 @@ public class UserDTO implements DTO {
 		this.connectionId = connectionId;
 	}
 
-	public Boolean getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(Boolean password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
@@ -77,6 +85,5 @@ public class UserDTO implements DTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
+
 }
