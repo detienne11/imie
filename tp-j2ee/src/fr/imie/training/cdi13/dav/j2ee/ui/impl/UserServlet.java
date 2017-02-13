@@ -40,7 +40,7 @@ public class UserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		final String urlConnection = "jdbc:postgresql://192.168.200.194:5432/fcpe";
+		final String urlConnection = "jdbc:postgresql://192.168.200.172:5432/fcpe";
 
 		// Datasource
 		final Datasource ds = new JDBCDatasource();
