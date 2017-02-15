@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -21,6 +21,7 @@
 		<derby.version>[10.13,)</derby.version>
 		<mysql.version>[5.1,6.0)</mysql.version>
 		<postgresql.version>9.4.1212</postgresql.version>
+		<appjee.version>0.0.1-SNAPSHOT</appjee.version>
 		<junit.version>4.11</junit.version>
 	</properties>
 
@@ -129,6 +130,29 @@
 				<version>${postgresql.version}</version>
 				<scope>provided</scope>
 			</dependency>
+			<!-- APP-J2EE -->
+			<dependency>
+				<groupId>fr.imie.training.cdi13.dav</groupId>
+				<artifactId>app-j2ee-bl-api</artifactId>
+				<version>${appjee.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>fr.imie.training.cdi13.dav</groupId>
+				<artifactId>app-j2ee-bl-impl</artifactId>
+				<version>${appjee.version}</version>
+				<scope>runtime</scope>
+			</dependency>			
+			<dependency>
+				<groupId>fr.imie.training.cdi13.dav</groupId>
+				<artifactId>app-j2ee-dal-api</artifactId>
+				<version>${appjee.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>fr.imie.training.cdi13.dav</groupId>
+				<artifactId>app-j2ee-dal-impl</artifactId>
+				<version>${appjee.version}</version>
+				<scope>runtime</scope>
+			</dependency>
 			<!-- TEST -->
 			<dependency>
 				<groupId>junit</groupId>
@@ -151,6 +175,16 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>fr.imie.training.cdi13.dav</groupId>
+			<artifactId>app-j2ee-bl-api</artifactId>
+			<version>${appjee.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>fr.imie.training.cdi13.dav</groupId>
+			<artifactId>app-j2ee-dal-api</artifactId>
+			<version>${appjee.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
