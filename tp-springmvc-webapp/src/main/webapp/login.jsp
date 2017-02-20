@@ -5,6 +5,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<![endif]-->		
 		<title>Login</title>
 		<jsp:include page="boxes/links.jsp" />
 	</head>

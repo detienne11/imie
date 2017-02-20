@@ -73,21 +73,21 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User persistUser(User user, BO.STATE state) throws BusinessException {
+	public User persistUser(User user) throws BusinessException {
 
 		User bo = null;
 
 		try {
 			final UserDAO dao = this.getUserDAO();
 			UserDTO dto = user.convertToDTO();
-			if (state == BO.STATE.TO_INSERT) {
+			if (user.getState() == BO.STATE.TO_INSERT) {
 				dto = dao.create(dto);
 				bo = new User();
 				bo.setFromDTO(dto);
-			} else if (state == BO.STATE.TO_UPDATE) {
+			} else if (user.getState() == BO.STATE.TO_UPDATE) {
 				dao.update(dto);
 				bo = user;
-			} else if (state == BO.STATE.TO_REMOVE) {
+			} else if (user.getState() == BO.STATE.TO_REMOVE) {
 				dao.delete(dto);
 				bo = null;
 			} else {
