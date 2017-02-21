@@ -26,4 +26,5 @@
 		</dependency>
 	</dependencies>
 
+	<name>app-inject-webapp</name>
 </project>

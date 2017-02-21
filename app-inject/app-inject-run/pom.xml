@@ -13,6 +13,10 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>ejb-api</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>javax.enterprise</groupId>
 			<artifactId>cdi-api</artifactId>
 		</dependency>
@@ -26,4 +30,5 @@
 		</dependency>
 	</dependencies>
 
+	<name>app-inject-run</name>
 </project>
