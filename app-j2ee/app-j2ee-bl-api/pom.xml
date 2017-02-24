@@ -11,6 +11,16 @@
 	<artifactId>app-j2ee-bl-api</artifactId>
 
 	<dependencies>
+		<!-- JPA -->
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>ejb-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>fr.imie.training.cdi13.dav</groupId>
+			<artifactId>app-j2ee-jpa</artifactId>
+		</dependency>
+		<!-- JDBC -->
 		<dependency>
 			<groupId>fr.imie.training.cdi13.dav</groupId>
 			<artifactId>app-j2ee-dal-api</artifactId>

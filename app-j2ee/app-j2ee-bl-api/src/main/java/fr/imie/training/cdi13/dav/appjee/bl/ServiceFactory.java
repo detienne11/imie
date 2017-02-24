@@ -35,6 +35,9 @@ public class ServiceFactory {
 		if (serviceType == Service.SERVICE_TYPE.USER) {			
 			impl = "fr.imie.training.cdi13.dav.appjee.bl.service.impl.UserServiceImpl";
 		}
+		else if (serviceType == Service.SERVICE_TYPE.JPA_USER) {	
+			impl = "fr.imie.training.cdi13.dav.appjee.bl.service.impl.JpaUserServiceImpl";
+		}
 		else {
 			throw new BusinessException("Business Layer : BusinessException - getService : serviceType invalid" );
 		}

@@ -2,6 +2,7 @@ package fr.imie.training.cdi13.dav.appjee.bl.domain;
 
 import fr.imie.training.cdi13.dav.appjee.bl.BusinessException;
 import fr.imie.training.cdi13.dav.appjee.dal.dto.UserDTO;
+import fr.imie.training.cdi13.dav.jpa.entity.Utilisateur;
 
 public class User implements BO<UserDTO> {
 
@@ -125,6 +126,30 @@ public class User implements BO<UserDTO> {
 		this.setPassword(dto.getPassword());
 		this.setActif(dto.getActif());
 
+	}
+
+	public void setFromDTO(Utilisateur dto) throws BusinessException {
+		if (dto == null) {
+			throw new BusinessException("convert JPA DTO to BO failed");
+		}
+		this.setId(dto.getId());
+		this.setNom(dto.getNom());
+		this.setPrenom(dto.getPrenom());
+		this.setEmail(dto.getEmail());
+		this.setConnectionId(dto.getIdConnexion());
+		this.setPassword(dto.getMotDePasse());
+		this.setActif(dto.getEstActif());
+	}
+
+	public void populateToEntity(Utilisateur entity) {
+
+		entity.setId(this.getId());
+		entity.setNom(this.getNom());
+		entity.setPrenom(this.getPrenom());
+		entity.setEmail(this.getEmail());
+		entity.setIdConnexion(this.getConnectionId());
+		entity.setMotDePasse(this.getPassword());
+		entity.setEstActif(this.getActif());
 	}
 
 }

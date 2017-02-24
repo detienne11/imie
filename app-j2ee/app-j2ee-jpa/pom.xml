@@ -8,21 +8,12 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>app-j2ee-bl-impl</artifactId>
+	<artifactId>app-j2ee-jpa</artifactId>
 
 	<dependencies>
-		<dependency>
-			<groupId>javax.ejb</groupId>
-			<artifactId>ejb-api</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>fr.imie.training.cdi13.dav</groupId>
-			<artifactId>app-j2ee-bl-api</artifactId>
-		</dependency>
 	</dependencies>
-
 </project>
