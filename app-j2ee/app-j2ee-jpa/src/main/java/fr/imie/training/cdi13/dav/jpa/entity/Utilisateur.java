@@ -2,6 +2,7 @@ package fr.imie.training.cdi13.dav.jpa.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -32,6 +33,23 @@ public class Utilisateur implements Serializable {
 	private String nom;
 
 	private String prenom;
+
+	//bi-directional many-to-one association to Role
+	@ManyToOne
+	private Role role;
+
+	//bi-directional many-to-many association to Groupe
+	@ManyToMany
+	@JoinTable(
+		name="utilisateurgroupes"
+		, joinColumns={
+			@JoinColumn(name="user_id")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="groupe_id")
+			}
+		)
+	private List<Groupe> groupes;
 
 	public Utilisateur() {
 	}
@@ -90,6 +108,22 @@ public class Utilisateur implements Serializable {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+
+	public Role getRole() {
+		return this.role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public List<Groupe> getGroupes() {
+		return this.groupes;
+	}
+
+	public void setGroupes(List<Groupe> groupes) {
+		this.groupes = groupes;
 	}
 
 }

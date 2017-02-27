@@ -6,6 +6,14 @@
 	<persistence-unit name="fcpePG" transaction-type="JTA">
 		<jta-data-source>java:/fcpePG</jta-data-source>
 		<class>fr.imie.training.cdi13.dav.jpa.entity.Utilisateur</class>
+		<class>fr.imie.training.cdi13.dav.jpa.entity.Eleve</class>
+		<class>fr.imie.training.cdi13.dav.jpa.entity.Eleves2</class>
+		<class>fr.imie.training.cdi13.dav.jpa.entity.Groupe</class>
+		<class>fr.imie.training.cdi13.dav.jpa.entity.Parent</class>
+		<class>fr.imie.training.cdi13.dav.jpa.entity.Parents2</class>
+		<class>fr.imie.training.cdi13.dav.jpa.entity.Personne</class>
+		<class>fr.imie.training.cdi13.dav.jpa.entity.Personnes2</class>
+		<class>fr.imie.training.cdi13.dav.jpa.entity.Role</class>
 	</persistence-unit>
 	
 	<!-- <persistence-unit name="fcpePG" transaction-type="RESOURCE_LOCAL"> 
