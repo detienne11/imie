@@ -1,0 +1,148 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>fr.imie.training.cdi13.dav</groupId>
+	<artifactId>app-j2ee</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>app-j2ee-bl-api</module>
+		<module>app-j2ee-bl-impl</module>
+		<module>app-j2ee-dal-api</module>
+		<module>app-j2ee-dal-impl</module>
+		<module>app-j2ee-jpa</module>
+		<module>app-j2ee-webapp</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<servlet.version></servlet.version>
+		<ejb.version>3.0</ejb.version>
+		<jpa.version>1.0.2</jpa.version>
+		<hibernate.version>[5.2,)</hibernate.version>
+		<postgresql.version>9.4.1212</postgresql.version>
+		<junit.version>4.11</junit.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>7.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+<!-- 			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${servlet.version}</version>
+				<scope>provided</scope>
+			</dependency> -->
+
+			<dependency>
+				<groupId>javax.ejb</groupId>
+				<artifactId>ejb-api</artifactId>
+				<version>${ejb.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>javax.persistence</groupId>
+				<artifactId>persistence-api</artifactId>
+				<version>${jpa.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			
+<!-- 			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate.version}</version>
+				<scope>runtime</scope>
+				<exclusions>
+			    	<exclusion>
+			          <groupId>dom4j</groupId>
+			          <artifactId>dom4j</artifactId>
+			        </exclusion>
+			    </exclusions>
+			</dependency> -->
+			
+			<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache -->
+<!-- 			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-ehcache</artifactId>
+				<version>${hibernate.version}</version>
+				<scope>runtime</scope>
+			</dependency> -->
+			
+			<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+			<dependency>
+			    <groupId>org.hibernate</groupId>
+			    <artifactId>hibernate-entitymanager</artifactId>
+			    <version>${hibernate.version}</version>
+			    <scope>runtime</scope>
+			    <exclusions>
+			    	<exclusion>
+			          <groupId>org.hibernate.javax.persistence</groupId>
+			          <artifactId>hibernate-jpa-2.1-api</artifactId>
+			        </exclusion>
+			    	<!-- <exclusion>
+			          <groupId>org.jboss.logging</groupId>
+			          <artifactId>jboss-logging</artifactId>
+			        </exclusion> -->
+			        <exclusion>
+			          <groupId>dom4j</groupId>
+			          <artifactId>dom4j</artifactId>
+			        </exclusion>
+			    </exclusions>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>fr.imie.training.cdi13.dav</groupId>
+				<artifactId>app-j2ee-bl-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>fr.imie.training.cdi13.dav</groupId>
+				<artifactId>app-j2ee-bl-impl</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>fr.imie.training.cdi13.dav</groupId>
+				<artifactId>app-j2ee-dal-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>fr.imie.training.cdi13.dav</groupId>
+				<artifactId>app-j2ee-dal-impl</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>fr.imie.training.cdi13.dav</groupId>
+				<artifactId>app-j2ee-jpa</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>

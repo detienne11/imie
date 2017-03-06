@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_vHYS4PdeEeaKrtV1OE9cew" name="RootElement">
+  <packagedElement xmi:type="uml:Package" xmi:id="_16eXUPdeEeaKrtV1OE9cew" name="fr.imie.training.cdi13.dav.tpinject.exo2.service">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_zCdBUPdeEeaKrtV1OE9cew" name="EnvoiMessageService">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_UK3MoPdfEeaKrtV1OE9cew" name="envoiMessage"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_tZdjEPdfEeaKrtV1OE9cew" client="_OqrhkPdfEeaKrtV1OE9cew" supplier="_zCdBUPdeEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_w5AzIPdfEeaKrtV1OE9cew" name="SmsServiceImpl"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_OqrhkPdfEeaKrtV1OE9cew" name="EmailServiceImpl"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_eZX9IPdhEeaKrtV1OE9cew" client="_w5AzIPdfEeaKrtV1OE9cew" supplier="_zCdBUPdeEeaKrtV1OE9cew"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_1wF20PdfEeaKrtV1OE9cew" name="fr.imie.training.cdi13.dav.tpinject.exo2.app">
+    <packagedElement xmi:type="uml:Interface" xmi:id="__JhrYPdfEeaKrtV1OE9cew" name="Consumer">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_DHCCwPdgEeaKrtV1OE9cew" name="processMessages"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ag3RwPdgEeaKrtV1OE9cew" name="ApplicationService"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_GBY7EPdgEeaKrtV1OE9cew" client="_Ag3RwPdgEeaKrtV1OE9cew" supplier="__JhrYPdfEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_z9rokPdgEeaKrtV1OE9cew" client="_Ag3RwPdgEeaKrtV1OE9cew" supplier="_zCdBUPdeEeaKrtV1OE9cew"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_HmJ5cPdgEeaKrtV1OE9cew" name="fr.imie.training.cdi13.dav.tpinject.exo2.injector">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_NLH94PdgEeaKrtV1OE9cew" name="MessageServiceInjector">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_BezEMPdhEeaKrtV1OE9cew" name="getConsumer"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_S-S2YPdgEeaKrtV1OE9cew" name="SmsServiceInjector"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_y4tkkPdgEeaKrtV1OE9cew" client="_QOC8UPdgEeaKrtV1OE9cew" supplier="__JhrYPdfEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_zeLCEPdgEeaKrtV1OE9cew" client="_QOC8UPdgEeaKrtV1OE9cew" supplier="_Ag3RwPdgEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_0irMAPdgEeaKrtV1OE9cew" client="_QOC8UPdgEeaKrtV1OE9cew" supplier="_OqrhkPdfEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_1DgBIPdgEeaKrtV1OE9cew" client="_S-S2YPdgEeaKrtV1OE9cew" supplier="_w5AzIPdfEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_1uqeAPdgEeaKrtV1OE9cew" client="_S-S2YPdgEeaKrtV1OE9cew" supplier="__JhrYPdfEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_2R_NgPdgEeaKrtV1OE9cew" client="_S-S2YPdgEeaKrtV1OE9cew" supplier="_Ag3RwPdgEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QOC8UPdgEeaKrtV1OE9cew" name="EmailServiceInjector"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_idX-EPdhEeaKrtV1OE9cew" client="_S-S2YPdgEeaKrtV1OE9cew" supplier="_NLH94PdgEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_jXk8gPdhEeaKrtV1OE9cew" client="_QOC8UPdgEeaKrtV1OE9cew" supplier="_NLH94PdgEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_FwfGYPdiEeaKrtV1OE9cew" client="_NLH94PdgEeaKrtV1OE9cew" supplier="__JhrYPdfEeaKrtV1OE9cew"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_JrHa0PdgEeaKrtV1OE9cew" name="fr.imie.training.cdi13.dav.tpinject.exo2">
+    <packagedElement xmi:type="uml:Class" xmi:id="_aRhMYPdgEeaKrtV1OE9cew" name="Exo2"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_rYyPUPdgEeaKrtV1OE9cew" client="_aRhMYPdgEeaKrtV1OE9cew" supplier="_NLH94PdgEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_sEzn0PdgEeaKrtV1OE9cew" client="_aRhMYPdgEeaKrtV1OE9cew" supplier="_QOC8UPdgEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_tAJOsPdgEeaKrtV1OE9cew" client="_aRhMYPdgEeaKrtV1OE9cew" supplier="_S-S2YPdgEeaKrtV1OE9cew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_WincQPdhEeaKrtV1OE9cew" client="_aRhMYPdgEeaKrtV1OE9cew" supplier="__JhrYPdfEeaKrtV1OE9cew"/>
+  </packagedElement>
+</uml:Model>
