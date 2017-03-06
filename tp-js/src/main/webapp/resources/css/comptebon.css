@@ -1,0 +1,35 @@
+@CHARSET "ISO-8859-1";
+
+td.nbrsearch {
+	background-color: #000000;
+	text-align: center;
+	color: #FFFFFF;
+	font:  bold;
+	font-family:  Arial, Verdana, Helvetica, sans-serif;
+	font-size: 50pt;
+	width: 450px;
+	height:100px;
+}
+
+td.chiffre {
+	background-color: #FF0000;
+	text-align: center;
+	color: #FFFFFF;
+	font:  bold;
+	font-family:  Arial, Verdana, Helvetica, sans-serif;
+	font-size: 40pt;
+	width: 150px;
+	height:100px;
+}
+
+.red {
+	height:40px;
+	width:3px;
+	background-color: #FF0000;
+}
+
+.green {
+	height:40px;
+	width:3px;
+	background-color: #00CC66;	
+}

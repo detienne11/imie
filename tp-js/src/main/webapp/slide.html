@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Slide</title>
+		<script type="text/javascript" src="resources/js/slide.js"></script>
+	</head>
+<body>
+	
+	<h1>TP Javascript : Slide</h1>
+	
+	<p>
+	<h2>Slide</h2>	
+		<form id="formSlide" onSubmit="javascript:return false;">
+			<label>Timer :
+			<input id="nb" type="text" placeHolder="Entrez une nombre">en ms</label>
+			<br/><br/>
+			<input name="btn.start" type="submit" value="start" onClick="javascript:startSlide();">
+			<input name="btn.stop" type="submit" value="stop" onClick="javascript:stopSlide();">
+		</form>		
+	</p>
+	<div id="slide"></div>
+	
+</body>
+</html>

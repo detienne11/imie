@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="resources/js/comptebon.js"></script>
+		<link type="text/css" href="resources/css/comptebon.css" rel="stylesheet"/> 
+	</head>
+	
+	<body onload="launchGame();">
+
+		<h1>Des Chiffres et des Lettres</h1>
+		
+		<ul>
+			<li><a href="#" onclick="startGame();">Start Game</a></li>
+			<li><a href="#" onclick="newGame();">New Game</a></li>
+		</ul>
+		
+		<div class="progressbar">
+		<table>
+			<tr><td id="countervalue" class="none">0</td>
+			<script type="text/javascript">
+				for (var i = 0; i < 60; i++) {
+					document.write("<td id=\"cellcounter" +  i + "\" class=\"green\"></td>");
+				}
+			</script>
+		</tr></table>
+		</div>
+		<br/><br/>
+		<div align="center">
+		<table border="2">
+			<tr>
+				<td id="chiffre0" class="nbrsearch" colspan="3"></td>
+			</tr>
+			<tr>
+				<td id="chiffre1" class="chiffre"></td>
+				<td id="chiffre2" class="chiffre"></td>
+				<td id="chiffre3" class="chiffre"></td>
+			</tr>
+			<tr>
+				<td id="chiffre4" class="chiffre"></td>
+				<td id="chiffre5" class="chiffre"></td>
+				<td id="chiffre6" class="chiffre"></td>
+			</tr>
+		</table>
+		</div>
+
+	</body>
+</html>
+

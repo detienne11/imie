@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>TP Javascript : Event</title>
+		<link type="text/css" href="resources/css/event.css" rel="stylesheet"/> 
+		<script type="text/javascript" src="resources/js/event.js"></script>
+	</head>
+<body>
+	
+	<h1>TP Javascripts : Event</h1>
+
+	<p>
+		<h2>Exo1 </h2>
+		<!-- Exercice 1: 
+			Déclarer dans un fichier CSS une classe nommée 'active'. Un élément de classe 'active' doit avoir un
+			fond rouge.	A partir d'une liste dans un fichier HTML (ul), faites en sorte que l'élément de la liste sur lequel on
+			clique prenne la classe 'active'. Si un autre élément avait la classe 'active', il la perd.
+		 -->
+		<ul id="menu">
+			<li>Wsl</li>
+			<li><del>SurfReport</del></li>
+			<li>Allosurf</li>
+			<li>ViewSurf</li>
+			<li>SurfSession</li>
+			<li>Windguru</li>
+		</ul>
+		
+		<script type="text/javascript">
+			launch();
+		</script>
+		
+		<!-- <form action="javascript:calculSante('form.age');">
+			<input id="form.age" type="text" placeholder="Entrez votre age" >
+		</form>
+		<br/>
+		<div id="sante"></div> -->
+	</p>
+	<p>
+		<h2>Exo 2 + Exo 3</h2>
+		<!-- Exercice 2 :
+			Placez un input de type text, ainsi qu'une liste dans un document HTML. Écrivez un script qui
+			reproduit   la   saisie   de   l'utilisateur   (dans   l'input)   dans   le   dernier   élément   de   la   liste.   Lorsque
+			l'utilisateur appuie sur la touche "Entrée", un nouvel élément dans la liste est créé et l'input est vidé -->
+		<!-- Exercice 3 Enrichissez l'exercice précédent en supprimant un élément de la liste si l'utilisateur clic dessus. -->
+		<form id="formExo2" onSubmit="javascript:return false;">
+			<input id="form.input" type="text" placeholder="Entrez votre texte" >
+		</form>
+		<br/><br/>
+		<div id="exo2"></div>		
+		<script type="text/javascript">
+			exo2();
+		</script>		
+	</p>
+	
+	<p>
+		<h2>Exo 4</h2>
+		<!-- Exercice 4: 
+		En vous inspirant des exercices précédents, créez une todo-list en Javascript. Dans une todo-list, il 
+		est   possible   d'ajouter   des   tâches,   de   supprimer   des   tâches   et   de   marquer   des   tâches   comme
+		accomplies (barrés les) -->
+		<form id="formExo4" onSubmit="javascript:return false;">
+			<input id="form.input4" type="text" placeholder="Entrez votre tache" >
+		</form>
+		<br/><br/>
+		<div id="exo4"></div>		
+		<script type="text/javascript">
+			exo4();
+		</script>
+	</p>
+
+		
+</body>
+</html>

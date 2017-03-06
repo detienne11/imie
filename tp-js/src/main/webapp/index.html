@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 1: externe -->
+		<script type="text/javascript" src="resources/js/common.js"></script>
+	</head>
+<body>
+	
+	<h1>TP Javascript</h1>
+	
+	<!-- 2: inline -->
+	<p>
+	<script type="text/javascript">
+		// alert("Dommage: vous n\'avez pas d\'internet");
+		document.write("Dommage inline: vous n\'avez toujours pas d\'internet<br/>");
+		
+		var value= "toto<br/>";		
+		document.write(value);
+		
+		var a = 1;
+		
+		if (a == 1) {
+			a++;
+			document.write(a);
+		}
+		
+		document.write("<br/>");
+		
+		afficheNom("David");
+		
+		document.write("<br/>");
+		
+		var tab = [1,2,3];
+		document.write(tab[2]);
+		
+		var b = "dd";
+		document.write(b);
+		document.write("<br/>");
+		document.write(typeof b);
+		b = 5;
+		document.write("<br/>");
+		document.write(typeof b);
+		b = {};
+		document.write("<br/>");
+		document.write(typeof b);
+		
+		
+		
+		
+	</script>
+	</p>
+	
+	<p>
+	<h2>Test Objet</h2>
+	<script type="text/javascript">
+		var obj = {
+				nom: 'Bat',
+				saluer: function(qui){
+					return "Bonjour " + qui;
+				},
+				prenom : 'Robin'				
+		};
+		
+		document.write(obj.nom + "<br/>");
+		document.write(obj.prenom + "<br/>");
+		document.write(obj.saluer('Iron man'));
+		
+	</script>
+	</p>
+	
+	<!-- 3: noscript -->
+	<noscript>
+		Merci d'activer javascript sur votre navigateur
+	</noscript>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+			
+.active {
+	background-color : red;		
+}
+
+.done {
+	text-decoration:line-through;
+}

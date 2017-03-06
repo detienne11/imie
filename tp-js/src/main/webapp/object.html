@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Object</title>
+		<script type="text/javascript" src="resources/js/object.js"></script>
+	</head>
+<body>
+	
+	<h1>TP Javascript : Object</h1>
+	
+	<p>
+		<h2>Exo1 : Object</h2>
+		<!-- 
+		Créer un objet (new Object()). Ajouter un attribut de type String et une méthode qui affiche (alert) cet attribut.	Appeler la méthode.
+		Créer un objet anonyme avec le même comportement Appeler la méthode de celui-ci.
+		Créer un constructeur qui prend en paramètre une chaîne de caractère et qui possède une méthode d’affichage de celle-ci.
+		Créer un objet en passant un objet en paramètre. Appeler la méthode de celui-ci.
+		 -->
+		<script type="text/javascript">
+			// cas 1
+			var p1 = new Object(); // var person = new Object;
+			p1.nom = "toto";
+			p1.getNom = function(){
+				return this.nom;
+			};
+			
+			console.log(p1);
+			console.log(p1.getNom());
+			document.write("cas 1 :" + p1.getNom());
+						
+			document.write("<br/><br/>");
+			
+			// cas 2
+			var anonymePerson = {
+					nom : "anonyme",
+					getNom : function(){
+						return this.nom;
+					}
+			};
+			console.log(anonymePerson);
+			console.log(anonymePerson.getNom());
+			document.write("cas 2 :" + anonymePerson.getNom());
+			
+			document.write("<br/><br/>");
+			
+			// cas 3
+			function Person(nom){
+				var nom = nom;
+				this.getNom = function(){
+					return nom;
+				}
+			}
+			var p2 = new Person("Batman");
+			console.log(p2);
+			console.log(p2.getNom());
+			document.write("cas3 :" + p2.getNom());
+			
+			document.write("<br/><br/>");
+			
+			// cas 4
+			function Person3(obj){
+				this.display = function (){
+					return obj;
+				}
+			}
+			
+			var p3 = new Person3(p2);
+			
+			console.log(p3);
+			console.log(p3.display());
+			document.write("cas4 :" + p3.display());
+			
+		</script>
+	</p>
+	<p>
+		<h2>Exo 2</h2>
+		<script type="text/javascript">
+			console.log("Exo 2");
+			
+			//cas 1
+			function myObject(){
+				var myAttribut = "private";
+				var myFunction = function(){
+					return "private function";
+				}
+			}
+			
+			var myObj = new myObject();
+			console.log(myObj);
+			console.log(myObj.myAttribut); // undefined
+			try {
+				console.log(myObj.myFunction()); // Uncaught TypeError: myObj.myFunction is not a function
+			} catch(e){
+				document.write(e);
+				console.log(e);
+			}
+			
+			document.write("<br/><br/>");
+			
+			// cas 2
+ 			function myObject2(){
+				var myAttribut = "private";
+				this.myFunction = function(){
+					return "public function";
+				}
+			}
+			
+			var myObj = new myObject2();
+			console.log(myObj);
+			console.log(myObj.myAttribut);
+			console.log(myObj.myFunction());
+			document.write(myObj.myFunction());
+			
+		</script>
+		
+	</p>
+	<p>
+		<h2>Exo 3</h2>
+		<script type="text/javascript">
+		
+		</script>
+	</p>
+	
+</body>
+</html>

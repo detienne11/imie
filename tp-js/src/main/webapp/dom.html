@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>TP Javascript : Exo1</title>
+		<script type="text/javascript" src="resources/js/dom.js"></script>
+	</head>
+<body>
+	
+	<h1>TP Javascripts : DOM</h1>
+
+	<p>
+		<h2>Exo1 : Changer les URLs</h2>
+		<form action="javascript:changeUrl();">
+			<input type="submit" value="ChangeUrl">
+		</form>
+		<!-- Créez un script qui sélectionne tous les liens hypertexte d'une page et les fait pointer vers la page
+			http://www.imie-ecole-informatique.fr/ et en changeant leur contenu par IMIE.
+ 		-->
+ 		<ul>
+ 			<li><a href="https://www.google.fr">Google</a></li>
+ 			<li><a href="https://www.w3schools.com">W3C</a></li>			
+ 		</ul>
+ 		<a href="http://maralinga.free.fr">Maralinga</a>
+	</p>
+	
+	<a href="http://detienne11.free.fr">Website perso</a>
+	
+	<p>
+		<h2>Exo 2 : Creation Menu Dynamique</h2>
+		<form action="javascript:createMenu('exo2');">
+			<input type="submit" value="Generer Menu">
+		</form>
+		<div id="exo2"></div>
+	</p>
+	
+	<p>
+		<h2>Exo 3 : Invertion l'ordre des elements</h2>
+		<form action="javascript:invert('exo3');">
+			<input type="submit" value="Inverser">
+		</form>		
+		<div id="exo3">
+			<script type="text/javascript">
+				createMenu('exo3');
+			</script>
+		</div>
+	</p>
+	
+	<p>
+		<h2>Exo 4</h2>
+		
+		<script type="text/javascript">
+			var objList = [{
+				nom: 'Bat',				
+				prenom : 'Robin',
+				date: 1
+			},{
+				nom: 'Iron',				
+				prenom : 'Man',
+				date: 3
+			},{
+				nom: 'Mortal',				
+				prenom : 'Kombat',
+				date: 10
+			}];
+		</script>
+		
+		<form action="javascript:createTable('exo4',objList);">
+			<input type="submit" value="CreerTableau">
+		</form>
+		<div id="exo4"></div>		
+	</p>
+	
+	<p>
+		<h2>Exo 5</h2>
+		<form action="javascript:createTable('exo5',[document]);">
+			<input type="submit" value="DocumentProperties">
+		</form>
+		<div id="exo5"></div>
+	</p>
+		
+</body>
+</html>
