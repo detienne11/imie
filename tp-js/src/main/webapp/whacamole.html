@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Whacamole</title>
+		<script type="text/javascript" src="resources/js/whacamole.js"></script>
+		<style>
+		
+			.grid {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;				
+			}
+			
+			figure {
+				display: inline-block;
+				border: 2px solid black;
+			}
+						
+			img {
+				margin-bottom: -4px;
+			}
+			
+			table {
+			    border-collapse: collapse;
+			    border-spacing:0px;
+			}
+			
+			th, td {
+			    padding: 3px;
+			    text-align: left;
+			    border: 1px solid #ddd;
+			}
+			
+			td {
+				font-style: normal;
+				width: 50px;
+				height: 50px;
+			}
+			
+			tr:nth-child(even) {
+				background-color:#f5f5f5;
+			}
+			
+			.hide {				
+				opacity: 0;
+				background-color: #dddddd;
+				/* transition: all 0.5s; */
+			}			
+			
+			.show {
+				opacity: 1;
+				background-color: #6666ff;
+				/* transition: all 0.5s; */
+			}
+		</style>
+	</head>
+	<body >
+		<head>
+			<h1>Whacamole</h1>
+			<input id="grid.size" type="text" placeHolder="Entrez une taille de grille">
+			<input name="btn.start" type="button" value="New Game" onClick="javascript:startGame();">
+			<input name="btn.reset" type="button" value="Reset" onClick="javascript:resetGame();">			
+			<section>
+				<p>Score
+					<div id="counter">0</div>
+				</p>
+			</section>
+		</head>
+		<main>
+			<section id="gameBoard">						
+			</section>
+		</main>
+		<section></section>
+		<div id="board"></div>
+	</body>
+</html>
