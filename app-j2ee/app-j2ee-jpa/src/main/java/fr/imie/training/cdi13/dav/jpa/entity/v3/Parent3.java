@@ -1,4 +1,4 @@
-package fr.imie.training.cdi13.dav.jpa.entity;
+package fr.imie.training.cdi13.dav.jpa.entity.v3;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -9,32 +9,19 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="parents2")
-@NamedQuery(name="Parents2.findAll", query="SELECT p FROM Parents2 p")
-public class Parents2 implements Serializable {
+@Table(name="parents3")
+@DiscriminatorValue("2")
+@NamedQuery(name="Parents2.findAll", query="SELECT p FROM Parent3 p")
+public class Parent3 extends Personne3 implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
 
 	private String email;
 
 	//bi-directional many-to-one association to Personnes2
-	@ManyToOne
-	@JoinColumn(name="person_id")
-	private Personnes2 personnes2;
-
-	public Parents2() {
-	}
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
+//	@ManyToOne
+//	@JoinColumn(name="person_id")
+//	private Personne3 personnes2;
 
 	public String getEmail() {
 		return this.email;
@@ -42,14 +29,6 @@ public class Parents2 implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public Personnes2 getPersonnes2() {
-		return this.personnes2;
-	}
-
-	public void setPersonnes2(Personnes2 personnes2) {
-		this.personnes2 = personnes2;
 	}
 
 }

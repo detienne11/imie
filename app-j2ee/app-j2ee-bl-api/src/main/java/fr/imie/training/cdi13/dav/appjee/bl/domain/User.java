@@ -30,6 +30,8 @@ public class User implements BO<UserDTO> {
 
 	private String email = null;
 
+	private Role role = null;
+
 	public User() {
 		super();
 	}
@@ -96,6 +98,14 @@ public class User implements BO<UserDTO> {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
 	@Override

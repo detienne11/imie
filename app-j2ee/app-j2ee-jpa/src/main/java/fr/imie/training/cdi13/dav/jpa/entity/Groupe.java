@@ -21,9 +21,9 @@ public class Groupe implements Serializable {
 
 	private String nom;
 
-	//bi-directional many-to-many association to Utilisateur
-	@ManyToMany(mappedBy="groupes")
-	private List<Utilisateur> utilisateurs;
+//	//bi-directional many-to-many association to Utilisateur
+//	@ManyToMany(mappedBy="groupes")
+//	private List<Utilisateur> utilisateurs;
 
 	public Groupe() {
 	}
@@ -44,12 +44,12 @@ public class Groupe implements Serializable {
 		this.nom = nom;
 	}
 
-	public List<Utilisateur> getUtilisateurs() {
-		return this.utilisateurs;
-	}
-
-	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
-		this.utilisateurs = utilisateurs;
-	}
+//	public List<Utilisateur> getUtilisateurs() {
+//		return this.utilisateurs;
+//	}
+//
+//	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
+//		this.utilisateurs = utilisateurs;
+//	}
 
 }

@@ -18,7 +18,7 @@ import fr.imie.training.cdi13.dav.appjee.bl.domain.BO.STATE;
 import fr.imie.training.cdi13.dav.appjee.bl.domain.Eleve;
 import fr.imie.training.cdi13.dav.appjee.bl.domain.Parent;
 import fr.imie.training.cdi13.dav.appjee.bl.domain.Person;
-import fr.imie.training.cdi13.dav.appjee.bl.domain.Person.PERSON_TYPE;
+//import fr.imie.training.cdi13.dav.appjee.bl.domain.Person.PERSON_TYPE;
 import fr.imie.training.cdi13.dav.appjee.bl.service.PersonServiceEjb;
 
 /**
@@ -64,13 +64,13 @@ public class PersonServlet extends HttpServlet {
 					}
 				}
 
-				personService.persist(person);
+				personService.persist3(person);
 
 				response.sendRedirect(mainUri);
 
 			} else {
 
-				personList = personService.find();
+				personList = personService.find3();
 
 				request.setAttribute("personList", personList);
 				request.getRequestDispatcher(JSP_VIEW).forward(request, response);
@@ -101,19 +101,19 @@ public class PersonServlet extends HttpServlet {
 		if ("2".equals(type)) {
 			// Parent
 			bo = new Parent();
-			bo.setType(PERSON_TYPE.PARENT);
+//			bo.setType(PERSON_TYPE.PARENT);
 			Parent p = ((Parent) bo);
 			p.setEmail(email);
 		} else if ("3".equals(type)) {
 			// Eleve
 			bo = new Eleve();
-			bo.setType(PERSON_TYPE.ELEVE);
+//			bo.setType(PERSON_TYPE.ELEVE);
 			Eleve e = ((Eleve) bo);
 			e.setNomClasse(nomClasse);
 		} else {
 			// Person
 			bo = new Person();
-			bo.setType(PERSON_TYPE.PERSON);
+//			bo.setType(PERSON_TYPE.PERSON);
 		}
 
 		if (sId != null) {

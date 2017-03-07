@@ -1,18 +1,17 @@
-package fr.imie.training.cdi13.dav.jpa.entity.v2;
+package fr.imie.training.cdi13.dav.jpa.entity.v1;
 
 import java.io.Serializable;
-import javax.persistence.*;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
 /**
  * The persistent class for the eleves database table.
  * 
  */
 @Entity
-@Table(name = "eleves2")
-@NamedQuery(name = "Eleve2.findAll", query = "SELECT e FROM Eleve2 e")
-public class Eleve2 extends Personne2 implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+@DiscriminatorValue("3")
+public class Eleve1 extends Personne1 implements Serializable {
 
 	private String nomclasse;
 
