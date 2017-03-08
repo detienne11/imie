@@ -5,11 +5,74 @@
 		<title>Whacamole</title>
 		<script type="text/javascript" src="resources/js/whacamole.js"></script>
 		<style>
+			
+			header {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin:10px;
+			}
+			
+			footer {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+				margin:10px;
+			}
+			
+			footer button {
+				font:  bold;
+				font-family:  Arial, Verdana, Helvetica, sans-serif;
+				font-size: 18pt;
+				/* appearance: normal;
+				-moz-appearance: normal;
+				-webkit-appearance:normal; */
+				/* background-color: #ddddff;
+				color: #dddd00; */
+				width: 150px;
+				height: 50px; 
+			}
+									
+			main {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+				margin:10px;
+			}
 		
 			.grid {
 				display: flex;
 				flex-direction: row;
 				justify-content: center;				
+			}
+			
+			.counter {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;				
+				font:  bold;
+				font-family:  Arial, Verdana, Helvetica, sans-serif;				
+			}
+			
+			.counterLabel {				
+				background-color: #000000;				
+				text-align: center;
+				color: #FFFFFF;
+				font-size: 18pt;
+				width: 150px;
+				height: 30px;
+			}
+			
+			.counterValue {
+				background-color: #FFFFFF;
+				border: 1px solid #000000;
+				text-align: center;
+				color: #000000;
+				font-size: 20pt;
+				width: 150px;
+				height: 30px;
 			}
 			
 			figure {
@@ -34,8 +97,8 @@
 			
 			td {
 				font-style: normal;
-				width: 50px;
-				height: 50px;
+				width: 64px;
+				height: 64px;
 			}
 			
 			tr:nth-child(even) {
@@ -50,28 +113,22 @@
 			
 			.show {
 				opacity: 1;
-				background-color: #6666ff;
+				background-color: #666666;
 				/* transition: all 0.5s; */
 			}
 		</style>
 	</head>
-	<body >
-		<head>
+	<body onLoad="javascript:loadGame();">
+		<header>
 			<h1>Whacamole</h1>
-			<input id="grid.size" type="text" placeHolder="Entrez une taille de grille">
-			<input name="btn.start" type="button" value="New Game" onClick="javascript:startGame();">
-			<input name="btn.reset" type="button" value="Reset" onClick="javascript:resetGame();">			
-			<section>
-				<p>Score
-					<div id="counter">0</div>
-				</p>
-			</section>
-		</head>
+		</header>
 		<main>
-			<section id="gameBoard">						
-			</section>
+			<section id="gameCounters"></section>
+			<section id="gameSpace"></section>
 		</main>
-		<section></section>
-		<div id="board"></div>
+		<footer>
+			<button type="button" onClick="javascript:startGame();">Start</button>
+			<button type="button" onClick="javascript:stopGame();">Stop</button>
+		</footer>
 	</body>
 </html>
