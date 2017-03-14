@@ -39,17 +39,17 @@ public class Utilisateur implements Serializable {
 	private Role role;
 
 	//bi-directional many-to-many association to Groupe
-	@ManyToMany
-	@JoinTable(
-		name="utilisateurgroupes"
-		, joinColumns={
-			@JoinColumn(name="user_id")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="groupe_id")
-			}
-		)
-	private List<Groupe> groupes;
+//	@ManyToMany
+//	@JoinTable(
+//		name="utilisateurgroupes"
+//		, joinColumns={
+//			@JoinColumn(name="user_id")
+//			}
+//		, inverseJoinColumns={
+//			@JoinColumn(name="groupe_id")
+//			}
+//		)
+//	private List<Groupe> groupes;
 
 	public Utilisateur() {
 	}
@@ -118,12 +118,12 @@ public class Utilisateur implements Serializable {
 		this.role = role;
 	}
 
-	public List<Groupe> getGroupes() {
-		return this.groupes;
-	}
-
-	public void setGroupes(List<Groupe> groupes) {
-		this.groupes = groupes;
-	}
+//	public List<Groupe> getGroupes() {
+//		return this.groupes;
+//	}
+//
+//	public void setGroupes(List<Groupe> groupes) {
+//		this.groupes = groupes;
+//	}
 
 }

@@ -70,6 +70,113 @@
 	</script>
 	</p>
 	
+	<p>
+		<h2>Test String</h2>
+		<script type="text/javascript">
+			
+		str1 = "test";
+		str2 = new String("test");
+		
+		console.log(typeof str1);
+		console.log(typeof str2);
+		
+		console.log(str1 instanceof  String);
+		console.log(str2 instanceof  String);
+		
+		function  test(str){
+			if (typeof str == "string") {
+				console.log("Test 1 : ok");
+			}
+			else {
+				console.log("Test 1 : nok");
+			}
+			
+			if (typeof str == "string" || str instanceof String) {
+				console.log("Test 2 : ok");
+			}
+			else {
+				console.log("Test 2 : nok");
+			}
+		}
+		
+		test(str1);
+		test(str2);
+		
+		</script>
+	</p>
+	
+	<p>
+		<h2>Test String</h2>
+		<script type="text/javascript">
+			var tab = [5,6,7,8,9];
+			console.log(tab);
+			
+			var ext = tab.slice(2,3);
+			console.log(ext);
+			
+			console.log(tab);
+			var ext2 = tab.splice(2,3);
+			console.log(ext2);
+			console.log(tab);
+			
+		</script>
+	</p>
+	<p>
+		<h2>Test Event</h2>
+		<form id="form.calcul">
+			<input id="result" type="text" value="0">
+			<input type="button" value="1">
+			<input type="button" value="2">
+			<input type="button" value="3">
+			<input type="button" value="4">
+			<input type="button" value="5">
+			<input type="button" value="6">
+			<input type="button" value="7">
+			<input type="button" value="8">
+			<input type="button" value="9">		
+		</form>
+		<script type="text/javascript">
+		
+		var div = document.getElementById('form.calcul');
+		var liste = div.children;
+		
+		// cas 1 : pb btn.value correspond au dernier input		
+/* 		for(var i = 0; i < liste.length;i++){
+			var btn = liste[i];			
+			btn.addEventListener('click', function(event){				
+				console.log(btn.value);
+			});
+		} */
+		
+		// cas 2
+		/* for(var i = 0; i < liste.length;i++){
+			var btn = liste[i];			
+			btn.addEventListener('click', function(event){
+				var bt = event.target;
+				console.log(bt.value);
+			});
+		} */
+		
+		// cas 3 : closure
+		var addEventClick = function(btn){
+			return function(event){
+				var result = document.getElementById('result');				
+				var number = Number(result.value) + Number(btn.value);
+				result.value = number;
+				console.log(number);
+				console.log(btn.value);
+			};
+		};
+		
+		for(var i = 0; i < liste.length;i++){
+			var btn = liste[i];
+			btn.addEventListener('click',addEventClick(btn));
+		}		
+		
+		</script>
+		
+	</p>
+	
 	<!-- 3: noscript -->
 	<noscript>
 		Merci d'activer javascript sur votre navigateur

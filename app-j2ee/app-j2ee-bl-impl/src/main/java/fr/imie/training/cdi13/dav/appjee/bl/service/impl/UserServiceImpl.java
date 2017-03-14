@@ -5,6 +5,7 @@ import java.util.List;
 
 import fr.imie.training.cdi13.dav.appjee.bl.BusinessException;
 import fr.imie.training.cdi13.dav.appjee.bl.domain.BO;
+import fr.imie.training.cdi13.dav.appjee.bl.domain.Role;
 import fr.imie.training.cdi13.dav.appjee.bl.domain.User;
 import fr.imie.training.cdi13.dav.appjee.bl.service.UserService;
 import fr.imie.training.cdi13.dav.appjee.dal.DALException;
@@ -114,4 +115,11 @@ public class UserServiceImpl implements UserService {
 
 	}
 
+
+	@Override
+	public List<Role> findRole() throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

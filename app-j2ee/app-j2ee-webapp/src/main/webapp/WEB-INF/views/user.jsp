@@ -61,8 +61,8 @@
 								<th><fmt:message key="ihm.user.list.field.email"/></th>
 								<th><fmt:message key="ihm.user.list.field.password"/></th>
 								<th><fmt:message key="ihm.user.list.field.actif"/></th>
-								<th></th>
-								<th></th>
+								<th><fmt:message key="ihm.user.list.field.role"/></th>
+								<th colspan="2">MAJ</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -85,6 +85,24 @@
 													<input type="checkbox" name="user.actif"/>
 												</c:otherwise>
 											</c:choose>
+										</td>
+										<td>
+											<select name="user.role.id">
+												<c:forEach var="role" items="${roleList}">
+												
+													<c:choose>
+														<c:when test="${role.id == user.role.id}">
+															<option value="${role.id}" selected="selected">
+														</c:when>
+														<c:otherwise>
+															<option value="${role.id}">
+														</c:otherwise>
+													</c:choose>
+												
+													<c:out value="${role.nom}"/></option>
+													
+												</c:forEach>
+											</select>
 										</td>
 										<td><input type="submit" value="modifier" id="btnUpd"/></td>
 									</form>
@@ -130,8 +148,14 @@
 									<td>
 										<input type="checkbox" name="user.actif" /><br>
 									</td>
-									<td><input type="submit" value="ajouter" id="btn1"/></td>
-									<td></td>									
+									<td>
+										<select name="user.role.id">
+											<c:forEach var="role" items="${roleList}">
+												<option value="${role.id}"><c:out value="${role.nom}"/></option>
+											</c:forEach>
+										</select>
+									</td>
+									<td colspan="2"><input type="submit" value="ajouter" id="btn1"/></td>									
 								</tr>
 							</form>						
 						</tfoot>

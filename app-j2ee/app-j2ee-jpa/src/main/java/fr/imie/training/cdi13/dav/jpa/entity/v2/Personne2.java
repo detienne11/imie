@@ -1,30 +1,29 @@
-package fr.imie.training.cdi13.dav.jpa.entity;
+package fr.imie.training.cdi13.dav.jpa.entity.v2;
 
 import java.io.Serializable;
 import javax.persistence.*;
 
 
 /**
- * The persistent class for the eleves database table.
+ * The persistent class for the personnes database table.
  * 
  */
 @Entity
-@Table(name="eleves")
-@NamedQuery(name="Eleve.findAll", query="SELECT e FROM Eleve e")
-public class Eleve implements Serializable {
+@Table(name="personnes2")
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+@NamedQuery(name="Personne2.findAll", query="SELECT p FROM Personne2 p")
+public class Personne2 implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	private Integer id;
 
 	private String nom;
-
-	private String nomclasse;
-
+	
 	private String prenom;
 
-	public Eleve() {
+	public Personne2() {
 	}
 
 	public Integer getId() {
@@ -35,20 +34,13 @@ public class Eleve implements Serializable {
 		this.id = id;
 	}
 
+	
 	public String getNom() {
 		return this.nom;
 	}
 
 	public void setNom(String nom) {
 		this.nom = nom;
-	}
-
-	public String getNomclasse() {
-		return this.nomclasse;
-	}
-
-	public void setNomclasse(String nomclasse) {
-		this.nomclasse = nomclasse;
 	}
 
 	public String getPrenom() {
@@ -58,5 +50,5 @@ public class Eleve implements Serializable {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-
+	
 }

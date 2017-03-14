@@ -9,6 +9,8 @@ id		serial NOT NULL PRIMARY KEY,
 nom		varchar(50)
 );
 
+insert into roles (nom) values('Invité'),('Utilisateur'),('Conseiller'),('Administrateur'),('Directeur');
+
 CREATE TABLE utilisateurGroupes (
 groupe_id	integer NOT NULL,	
 user_id	integer NOT NULL,
@@ -49,20 +51,21 @@ email		varchar(50)
 );
 
 -- disjonction : x Exclusion
-CREATE TABLE personnes2 (
+CREATE TABLE personnes3 (
 id			serial NOT NULL PRIMARY KEY,
+personType	integer,
 nom			varchar(50),
 prenom		varchar(50)
 );
 
-CREATE TABLE eleves2 (
+CREATE TABLE eleves3 (
 id			serial NOT NULL PRIMARY KEY,
 nomClasse	varchar(50),
 person_id	integer,
 FOREIGN KEY (person_id) REFERENCES personnes2(id)
 );
 
-CREATE TABLE parents2 (
+CREATE TABLE parents3 (
 id			serial NOT NULL PRIMARY KEY,
 email		varchar(50),
 person_id	integer,

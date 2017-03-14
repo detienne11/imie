@@ -21,6 +21,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<servlet.version></servlet.version>
+		<jstl.version>1.2</jstl.version>
 		<ejb.version>3.0</ejb.version>
 		<jpa.version>1.0.2</jpa.version>
 		<hibernate.version>[5.2,)</hibernate.version>
@@ -35,6 +36,14 @@
 				<groupId>javax</groupId>
 				<artifactId>javaee-api</artifactId>
 				<version>7.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${jstl.version}</version>
 				<scope>provided</scope>
 			</dependency>
 

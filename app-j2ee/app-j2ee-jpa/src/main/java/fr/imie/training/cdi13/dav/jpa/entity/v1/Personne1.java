@@ -1,32 +1,28 @@
-package fr.imie.training.cdi13.dav.jpa.entity;
+package fr.imie.training.cdi13.dav.jpa.entity.v1;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 
 /**
  * The persistent class for the personnes database table.
  * 
  */
 @Entity
-@Table(name="personnes")
-@NamedQuery(name="Personne.findAll", query="SELECT p FROM Personne p")
-public class Personne implements Serializable {
+@Table(name = "personnes1")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "persontype")
+@DiscriminatorValue("1")
+@NamedQuery(name = "Personne1.findAll", query = "SELECT p FROM Personne1 p")
+public class Personne1 implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	private String codepostal;
 
-	private String email;
-
 	private String nom;
-
-	private String nomclasse;
-
-	private Integer persontype;
 
 	private String prenom;
 
@@ -34,7 +30,7 @@ public class Personne implements Serializable {
 
 	private String ville;
 
-	public Personne() {
+	public Personne1() {
 	}
 
 	public Integer getId() {
@@ -53,36 +49,12 @@ public class Personne implements Serializable {
 		this.codepostal = codepostal;
 	}
 
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getNom() {
 		return this.nom;
 	}
 
 	public void setNom(String nom) {
 		this.nom = nom;
-	}
-
-	public String getNomclasse() {
-		return this.nomclasse;
-	}
-
-	public void setNomclasse(String nomclasse) {
-		this.nomclasse = nomclasse;
-	}
-
-	public Integer getPersontype() {
-		return this.persontype;
-	}
-
-	public void setPersontype(Integer persontype) {
-		this.persontype = persontype;
 	}
 
 	public String getPrenom() {

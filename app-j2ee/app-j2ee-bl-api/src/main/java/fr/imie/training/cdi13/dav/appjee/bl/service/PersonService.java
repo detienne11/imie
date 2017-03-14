@@ -15,4 +15,8 @@ public interface PersonService extends Service {
 
 	public void persist2(Person person) throws BusinessException;
 	
+	public List<Person> find3() throws BusinessException;
+
+	public void persist3(Person person) throws BusinessException;
+	
 }

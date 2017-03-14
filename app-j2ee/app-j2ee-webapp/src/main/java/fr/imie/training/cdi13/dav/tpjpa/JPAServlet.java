@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.imie.training.cdi13.dav.appjee.bl.BusinessException;
 import fr.imie.training.cdi13.dav.appjee.bl.domain.BO.STATE;
+import fr.imie.training.cdi13.dav.appjee.bl.domain.Role;
 import fr.imie.training.cdi13.dav.appjee.bl.domain.User;
 import fr.imie.training.cdi13.dav.appjee.bl.service.UserServiceEjb;
 
@@ -34,6 +35,7 @@ public class JPAServlet extends HttpServlet {
 
 		final String uri = request.getRequestURI();
 		List<User> userList = null;
+		List<Role> roleList = null;
 		try {
 			if (Pattern.matches("^.*/add$", uri)) {
 
@@ -58,13 +60,19 @@ public class JPAServlet extends HttpServlet {
 				response.sendRedirect(request.getContextPath() + "/user");
 
 			} else {
+				
+				roleList = userServiceEjb.findRole();
+				request.setAttribute("roleList", roleList);
+				
 				userList = userServiceEjb.findUser();
 				request.setAttribute("userList", userList);
+				
 				request.getRequestDispatcher(VIEW).forward(request, response);
 			}
 
 		} catch (BusinessException e) {
-			userList = new ArrayList<>();
+//			userList = new ArrayList<>();
+//			roleList = new ArrayList<>();
 		}
 	}
 
@@ -84,6 +92,10 @@ public class JPAServlet extends HttpServlet {
 		bo.setPrenom(request.getParameter("user.prenom"));
 		bo.setEmail(request.getParameter("user.email"));
 		bo.setPassword(request.getParameter("user.password"));
+		
+		Role role = new Role();
+		role.setId(Integer.valueOf(request.getParameter("user.role.id")));
+		bo.setRole(role);
 
 		String sActif = request.getParameter("user.actif");
 		boolean actif = false;

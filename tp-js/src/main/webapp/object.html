@@ -118,6 +118,70 @@
 	<p>
 		<h2>Exo 3</h2>
 		<script type="text/javascript">
+			
+			function myPrototype(obj){
+				obj = obj || {};
+				this.myAttribut = obj.myAttribut || "Non initialisé";
+				this.myFunction = obj.myFunction || function(){
+					console.log("Fonction non implémentée")
+				};
+			}
+						
+			var myObj = new myPrototype({myAttribut : "Valeur initialisée"});
+			
+			myObj.myFunction();
+			
+			var myObj2 = new myPrototype({
+				myFunction : function(){
+						console.log(this.myAttribut)
+				}
+			});
+			
+			myObj2.myFunction();
+			
+			var myObj3 = new myPrototype({
+				myAttribut : "Valeur initialisée",			
+				myFunction : function(){
+					console.log(this.myAttribut);
+				}
+			});
+			
+			myObj3.myFunction();
+			
+		</script>
+	</p>
+	<p>
+		<h2>Exo 4</h2>
+		<script type="text/javascript">
+			
+			function myPrototype(){
+				this.myfunction = function(){
+					console.log("Fonction non implémentée");
+				}
+			}
+			
+			var obj = new myPrototype();			
+			// obj.display(); // Error display not a function
+			
+			myPrototype.prototype.display = function(){
+				console.log("Méthode d'affichage");
+			};
+			obj.display();
+			
+			var obj2 = new myPrototype();
+			obj2.display();			
+			// obj.test(); // Error test not a function
+			// obj2.test(); // Error test not a function
+			
+			myPrototype.prototype = {test : function(){
+				console.log("Nouvelle méthode");
+			}};
+			
+			var obj3 = new myPrototype();			
+			// obj2.test(); // Error test not a function
+			
+			obj3.test();
+			obj3.display();
 		
 		</script>
 	</p>

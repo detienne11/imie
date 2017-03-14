@@ -1,18 +1,16 @@
 package fr.imie.training.cdi13.dav.appjee.bl.domain;
 
-import fr.imie.training.cdi13.dav.jpa.entity.Personne;
-
 public class Person {
 		
-	public enum PERSON_TYPE {
-		PERSON, PARENT, ELEVE
-	};
+//	public enum PERSON_TYPE {
+//		PERSON, PARENT, ELEVE
+//	};
 
 	private BO.STATE state = null;
 	
 	private Integer id;
 
-	private PERSON_TYPE type;
+//	private PERSON_TYPE type;
 	
 	private String nom;
 
@@ -20,25 +18,25 @@ public class Person {
 
 	private Address address;
 
-	public PERSON_TYPE getPersonType() {
-		return type;
-	}
-	
-	public Integer getType() {
-		if (this.type == PERSON_TYPE.ELEVE) {
-			return 3;
-		}
-		else if (this.type == PERSON_TYPE.PARENT) {
-			return 2;
-		}
-		else {
-			return 1;
-		}		
-	}
+//	public PERSON_TYPE getPersonType() {
+//		return type;
+//	}
+//	
+//	public Integer getType() {
+//		if (this.type == PERSON_TYPE.ELEVE) {
+//			return 3;
+//		}
+//		else if (this.type == PERSON_TYPE.PARENT) {
+//			return 2;
+//		}
+//		else {
+//			return 1;
+//		}		
+//	}
 
-	public void setType(PERSON_TYPE type) {
-		this.type = type;
-	}
+//	public void setType(PERSON_TYPE type) {
+//		this.type = type;
+//	}
 
 	public BO.STATE getState() {
 		return state;
@@ -86,6 +84,10 @@ public class Person {
 	
 	public String getEmail() {
 		return null;
+	}
+	
+	public Integer getType() {
+		return Integer.valueOf(1);
 	}
 	
 }
