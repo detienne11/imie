@@ -1,0 +1,12 @@
+{
+  "name": "tp-nodejs",
+  "version": "0.0.0",
+  "description": "Generated with Eclipse npm Tools",
+  "main": "demo.js",
+  "scripts": {
+	"start": "node ./src/main/js/demo.js",
+	"test": "echo 'Error: no test specified' && exit 1"
+  },
+  "author": "david etienne cdi13",
+  "license": "ISC"
+}

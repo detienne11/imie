@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>TP ETIENNE DAVID CDI13 - MAIN</title>
+</head>
+<body>
+	<header>
+		<h1>TP ETIENNE DAVID CDI13 - MAIN</h1>
+	</header>
+	<nav>
+		<ul>
+			<li>
+				<a href="/hello-world">Exo 1</a><br/>
+				<p>GET /hello-world : affiche le message "Hello World !", en utilisant res.send</p>
+			</li>
+			<li>
+				<a href="/coucou/david">Exo 2</a><br/>
+				<p>GET /coucou/:name : affiche le message "Coucou [name]", en utilisant template HTML</p>
+			</li>
+			<li>
+				<a href="/ping?message=text">Exo 3</a><br/>
+				<p>GET /ping?message=text : insert un document dans la collection ping (date et message) et répond "OK"</p>
+			</li>
+			<li>
+				Exo 4<br/>
+				<p>POST /message : insert un document dans la collection message (auteur, message) et répond "OK"</p>
+				
+				<form action="/message" method="post">
+					<label>Author :</label><input type="text" name="author" placeHolder="Entrez votre pseudo">
+					<label>Content :</label><textarea name="content" placeHolder="Entrez votre texte"></textarea>	
+					<input type="submit" value="Valider">				
+				</form>
+				
+			</li>
+			<li>
+				<a href="/messages">Exo 5</a><br/>
+				<p>GET /messages : affiche la liste des messages</p>
+			</li>
+			<li>
+				<a href="/message/david" >Exo 6</a><br/>
+				<p>GET /messages/:auteur : affiche la liste des messages correspondant à l'auteur</p>
+<!-- 				<form action="/message" method="get">
+					<label>Author :</label><input type="text" name="author" placeHolder="Entrez l'auteur">					
+					<input type="submit" value="Valider">
+				</form> -->
+			</li>							
+		</ul>
+	</nav>
+</body>
+</html>

@@ -1,0 +1,73 @@
+Node js
+
+Configuration
+
+Proxy
+npm config set proxy http://login.pass@ip@port
+npm config set https-proxy http://login.pass@ip@port
+
+npm install [--save|--save--dev] [-g] [nom-package]
+
+==> -g permet d'installer de manier globale (permet d'avoir la commande du package dans le path)
+
+Extension (Import)
+http, fs, url, socketio, os, path, net, events --> noyau
+express --> extension npm repo (MVC)
+electrolyte --> injection de dependence
+
+Import
+
+var fs = require("fs");
+
+initialiser un projet nodejs
+npm init 
+	==> creation d'un fichier package.json (equivalent à pom.xml)
+	
+npm install --save --save-dev
+
+// repo node : npm publish
+npmjs.org
+
+== dependencies dans ./node_modules
+
+npm start
+
+Modules
+// methode public exporter
+exports.MonModule = { function() {...},function() {...}}
+
+// ou
+exports.maMethode = function(){
+	...
+}
+
+utilisation
+var monModule = require("./MonModule");
+monModule.maMethode();
+
+
+// import
+	- noyau : var fs = require("fs");
+	- npm : var colors = require('colors'); // nécessite un npm install
+	- local : var monModule = require("./MonModule");
+	
+	
+
+
+os.type() ===> version de l'OS
+
+process.stdout / stdin / stderr => System.out/System.in / Sytem.err
+
+// liste des arguments en entrée
+process.argv.forEach(function(val, index, array){
+	console.log(index + ' - ' + val);
+});
+
+process.cwd() ==> repertoire courant
+
+process.env ===> variable enviornnement
+
+
+-- Event
+EventEmitter 
+

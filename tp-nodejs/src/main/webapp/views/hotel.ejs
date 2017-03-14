@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<header>
+		<h1>Hotels</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="/hotels">Hotels</a></li>
+		</ul>
+	</nav>
+	<main>
+		<section>
+			<h2>Hotel : <%= datas.fields.nom %></h2>
+			<p>
+			<table>
+				<% for (var field in datas.fields) { %>
+					<tr>
+						<th>
+							<%= field %>
+						</th>
+						<td><%= datas.fields[field] %></td>
+					<tr>
+				<% } %>
+			</table>
+			</p>			
+		</section>
+		<!-- <section>
+			<h2>Comments</h2>
+			<p>
+			<table>
+				<% for (var comment of comments) { %>
+					<tr>
+						<td><%= comment.author %></td>
+						<td><%= comment.content %></td>
+					<tr>
+				<% } %>
+			</table>
+			</p>			
+		</section> -->
+		<section>
+			<h2>Comment</h2>
+			<p>
+				<form action="/hotel/<%= datas._id%>/comment" method="post">
+					<label>Author :</label><input type="text" name="author" placeHolder="Entrez votre pseudo">
+					<label>Content :</label><textarea name="content" placeHolder="Entrez votre texte"></textarea>
+					<input type="submit" value="Valider">				
+				</form>
+			</p>
+		</section>
+	</main>
+</body>
+</html>

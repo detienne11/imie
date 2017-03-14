@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<header>
+		<h1>Hotels</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="/hotels">Hotels</a></li>
+		</ul>
+	</nav>
+	<main>
+		<section>
+			<h2>Liste des hotels</h2>
+			<p>
+<!-- 			<script>
+				console.log(datas);
+			</script> -->
+			<table>
+				<% for (var data of datas) { %>
+					<tr>
+						<td>
+							<a href="/hotel/<%= data.id %>">
+								<%= data.nom %>
+							</a>
+						</td>
+						<td>
+							<a href="/ville/<%= data.codepostal %>">
+								<%= data.ville %>
+							</a>
+						</td>
+						<td>
+							<%= data.nbStar %>
+						</td>
+					<tr>
+				<% } %>
+			</table>
+			</p>
+			
+		</section>
+	</main>
+</body>
+</html>
