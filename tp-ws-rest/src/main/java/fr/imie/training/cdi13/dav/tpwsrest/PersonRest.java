@@ -13,9 +13,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import fr.imie.training.cdi13.dav.tpjpa.api.Person;
-import fr.imie.training.cdi13.dav.tpjpa.api.PersonDAO;
-import fr.imie.training.cdi13.dav.tpjpa.impl.PersonDAOImpl;
+import fr.imie.training.cdi13.dav.tpwsrest.dto.Person;
+
+//import fr.imie.training.cdi13.dav.tpjpa.api.Person;
+//import fr.imie.training.cdi13.dav.tpjpa.api.PersonDAO;
+//import fr.imie.training.cdi13.dav.tpjpa.impl.PersonDAOImpl;
 
 
 
@@ -23,14 +25,14 @@ import fr.imie.training.cdi13.dav.tpjpa.impl.PersonDAOImpl;
 @Produces(MediaType.APPLICATION_JSON)
 public class PersonRest {
 	
-	private PersonDAO personDAO = null;
-	
-	private PersonDAO getPersonDAO(){
-		if (this.personDAO == null){
-			this.personDAO = new PersonDAOImpl();
-		}
-		return this.personDAO;
-	}
+//	private PersonDAO personDAO = null;
+//	
+//	private PersonDAO getPersonDAO(){
+//		if (this.personDAO == null){
+//			this.personDAO = new PersonDAOImpl();
+//		}
+//		return this.personDAO;
+//	}
 	
 	@GET
 	@Path("/ping")
@@ -40,8 +42,8 @@ public class PersonRest {
 	
 	@GET
 	public List<Person> findAll(){
-		List<Person> personList = this.getPersonDAO().find();
-//		List<Person> personList = new ArrayList<>();
+//		List<Person> personList = this.getPersonDAO().find();
+		List<Person> personList = new ArrayList<>();
 		return personList;
 	}
 	
