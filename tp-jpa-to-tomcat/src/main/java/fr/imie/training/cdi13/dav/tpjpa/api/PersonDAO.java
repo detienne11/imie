@@ -10,8 +10,14 @@ public interface PersonDAO {
 	
 	public Person find(Person person);
 	
-	public void persist(Person person);
+	public void create(Person person);
+	
+	public void update(Person person);
 	
 	public void delete(Person person);
+	
+	public void delete(Integer id);
+	
+	public void exception();
 	
 }

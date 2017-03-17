@@ -11,24 +11,28 @@ import fr.imie.training.cdi13.dav.tpjpa.api.PersonDAO;
 
 public class PersonDAOImpl implements PersonDAO {
 
-	EntityManagerFactory factory = null;
+	public enum ACTION {
+		CREATE, UPDATE, DELETE, EXCEPTION
+	};
 
-	public EntityManagerFactory getFactory() {
-		if (factory == null) {
-			factory = Persistence.createEntityManagerFactory("jpaEclipseLinkToTomcat");
+	private EntityManagerFactory emf = null;
+	
+	private EntityManagerFactory getFactory() {
+		if (emf == null) {
+			emf = Persistence.createEntityManagerFactory("jpaEclipseLinkToTomcat");
 		}
-		return factory;
+		return emf;
 	}
 
-	public EntityManager getEntityManager() {
+	private EntityManager getEntityManager() {
 		return getFactory().createEntityManager();
 	}
 
 	@Override
 	public Person find(Person person) {
-		return getEntityManager().find(Person.class, person.getId());
+		return find(person.getId());
 	}
-	
+
 	@Override
 	public Person find(Integer id) {
 		return getEntityManager().find(Person.class, id);
@@ -36,24 +40,67 @@ public class PersonDAOImpl implements PersonDAO {
 
 	@Override
 	public List<Person> find() {
-		// List<Person> personList = new ArrayList<>();
-		// Person person = new Person();
-		// person.setFirstName("Dark");
-		// person.setLastName("Vador");
-		// liste.add(person);
-//		List<Person> personList = getEntityManager().createQuery("from Person").getResultList();
+		// List<Person> personList = getEntityManager().createQuery("from
+		// Person").getResultList();
 		List<Person> personList = getEntityManager().createNamedQuery("Person.findAll").getResultList();
 		return personList;
 	}
 
+	private void persist(EntityManager em, Integer id) {
+		Person person = getEntityManager().getReference(Person.class, id);
+		this.persist(person, ACTION.DELETE);
+	}
+	
+	private void persist(Person person, ACTION action) {
+		System.out.println("Entity persistence " + String.valueOf(action));
+		
+		EntityManager em = getEntityManager();
+		em.getTransaction().begin();
+		try {
+			if (ACTION.CREATE == action) {
+				em.persist(person);
+			} else if (ACTION.UPDATE == action) {
+				em.merge(person);
+			} else if (ACTION.DELETE == action) {
+				final Person p = em.getReference(Person.class, person.getId());
+				em.remove(p);
+			}else if (ACTION.EXCEPTION == action) {
+				throw new Exception("Erreur personnalisé");
+			}
+			
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			System.err.println("Exception : " + e.getMessage());
+			em.getTransaction().rollback();
+		} finally {
+			em.close();
+		}
+	}
+
 	@Override
-	public void persist(Person person) {
-		getEntityManager().persist(person);
+	public void create(Person person) {
+		this.persist(person, ACTION.CREATE);
+	}
+
+	@Override
+	public void update(Person person) {
+		this.persist(person, ACTION.UPDATE);
+	}
+
+	@Override
+	public void delete(Integer id) {
+		Person person = getEntityManager().getReference(Person.class, id);
+		this.persist(person, ACTION.DELETE);
 	}
 
 	@Override
 	public void delete(Person person) {
-		getEntityManager().remove(person);
+		this.delete(person.getId());
+	}
+	
+	@Override
+	public void exception() {
+		this.persist(null, ACTION.EXCEPTION);
 	}
 
 }
