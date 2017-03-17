@@ -15,7 +15,7 @@ public class PersonDAOImpl implements PersonDAO {
 
 	public EntityManagerFactory getFactory() {
 		if (factory == null) {
-			factory = Persistence.createEntityManagerFactory("tpJpaToTomcat");
+			factory = Persistence.createEntityManagerFactory("jpaEclipseLinkToTomcat");
 		}
 		return factory;
 	}
@@ -41,7 +41,8 @@ public class PersonDAOImpl implements PersonDAO {
 		// person.setFirstName("Dark");
 		// person.setLastName("Vador");
 		// liste.add(person);
-		List<Person> personList = getEntityManager().createQuery("from Person").getResultList();
+//		List<Person> personList = getEntityManager().createQuery("from Person").getResultList();
+		List<Person> personList = getEntityManager().createNamedQuery("Person.findAll").getResultList();
 		return personList;
 	}
 

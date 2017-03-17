@@ -47,12 +47,16 @@ public class PersonRest {
 	
 	@GET
 	@Path("{id}")
-	public Response findById(@PathParam("id") Integer id){
-		Person person = new Person();
-		person.setFirstName("Dark");
-		person.setLastName("Vador");
+	public Person findById(@PathParam("id") Integer id){
+//		Person person = new Person();
+//		person.setFirstName("Dark");
+//		person.setLastName("Vador");
+//		System.out.println(person);
+		Person person = this.getPersonDAO().find(id);
 		System.out.println(person);
-		return Response.ok(person).build();
+		return person;
+		
+//		return Response.ok(person).build();
 	}
 	
 	@POST
