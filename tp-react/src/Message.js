@@ -19,4 +19,9 @@ class Message extends Component {
 	}
 }
 
+
+Message.propTypes = {
+		message : React.PropTypes.object.isRequired
+}
+
 export default Message;

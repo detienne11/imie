@@ -26,6 +26,9 @@ class MessageList extends Component {
 	
 	render() {
 		
+//		destructureur
+//		const {messages} =  this.state;
+		
 		const messages = this.renderMessage(this.props.messageList);
 	        
 	    return (
@@ -36,6 +39,10 @@ class MessageList extends Component {
 			</div>
 	    );
 	}
+}
+
+MessageList.propTypes = {
+	messageList : React.PropTypes.array.isRequired
 }
 
 export default MessageList;
