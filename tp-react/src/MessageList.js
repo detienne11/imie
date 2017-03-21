@@ -14,11 +14,11 @@ class MessageList extends Component {
 	    if (messages.length > 0) {
 	    	
 	        return (
-	        		<ul>
+	        		<div>
 	        			{messages.map((msg) => (	        		
 	        				<Message key={msg.id} message={msg} />
 	        			))}
-	        		</ul>
+	        		</div>
 	        );
 	    }
 	    else return [];
@@ -32,10 +32,8 @@ class MessageList extends Component {
 		const messages = this.renderMessage(this.props.messageList);
 	        
 	    return (
-			<div>
-				<h2>MessageList</h2>
-            	{ messages }
-				<textarea id="console" style={{height: 250,width:200}}></textarea>				
+			<div className="msg-list">
+            	{ messages }			
 			</div>
 	    );
 	}

@@ -10,18 +10,28 @@ class Message extends Component {
 	    };
 	}
 	
-	render() {			
+	render() {
+		
+		let style = "msg-item-me";
+		
+		if (this.state.message.ismine == null) {
+			style = "msg-item";
+		}
+//		console.log(style);
+		
 	    return (
-			<li>			
-			{this.state.message.id} : {this.state.message.login} - {this.state.message.message} 
-			</li>
+	    	<div className={style}>
+	    		<div className="msg-text">{this.state.message.text}</div>
+	    		<div className="msg-date">{this.state.message.date}</div>
+	    		{/*this.state.message.userid} - {this.state.message.id*/}  
+			</div>
 	    );
 	}
 }
 
 
 Message.propTypes = {
-		message : React.PropTypes.object.isRequired
+	message : React.PropTypes.object.isRequired
 }
 
 export default Message;

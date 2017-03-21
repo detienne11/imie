@@ -5,19 +5,14 @@ class MessageForm extends Component {
 	constructor(props) {
 	    super(props);
 	    this.state = {
-	    		login:'dav',
-	    		message: '',	    		
-	    		};	    
+	    	login: '',
+	    	message: ''	    		
+	    };	    
 	    
-//	    this.handleChange = this.handleChange.bind(this);
 	    this.handleInputChange = this.handleInputChange.bind(this);
 	    this.handleSubmit = this.handleSubmit.bind(this);
 	  }
-
-//	  handleChange(event) {
-//	    this.setState({value: event.target.value});
-//	  }
-	  
+  
 	  handleInputChange(event) {
 		    const target = event.target;
 		    const name = target.name;
@@ -37,20 +32,20 @@ class MessageForm extends Component {
 	    
 	  }
 	  
+//      <label>
+//      Name:
+//      	<input id="login" type="text" name="login" placeholder="Entrez votre login"  value={this.state.login} onChange={this.handleInputChange}/>
+//		
+//    </label>
+	  
 	render() {			
 	    return (
-	    		  <form onSubmit={this.handleSubmit}>
-	    	      <label>
-	    	        Name:
-	    	        	<input id="login" type="text" name="login" placeholder="Entrez votre login"  value={this.state.login} onChange={this.handleInputChange}/>
-					
-	    	      </label>
-	    	      <label>
-	    	        Message :
-	    	        	<input type="text" name="message" placeholder="Entrez votre message"  value={this.state.message} onChange={this.handleInputChange} />
-		    	  </label>  
-	    	      <input type="submit" value="Submit" />
+	    		<div className="msg-form">
+	    			<form onSubmit={this.handleSubmit}>
+	    				<input type="text" name="message" placeholder="Entrez votre message" value={this.state.message} onChange={this.handleInputChange} width="200px" />
+	    				<input type="submit" value=">" />
 	    	    </form>
+	    	  </div>
 	    );
 	}
 }
