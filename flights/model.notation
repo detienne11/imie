@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <notation:Diagram xmi:id="_Skq1gA8GEeeGN_RhupIKZw" type="PapyrusUMLActivityDiagram" name="Activity Diagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_Skq1gQ8GEeeGN_RhupIKZw" type="Activity_Shape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Skq1gg8GEeeGN_RhupIKZw" type="Activity_NameLabel"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Skq1gw8GEeeGN_RhupIKZw" type="Activity_KeywordLabel"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_Skq1hA8GEeeGN_RhupIKZw" type="Activity_ParameterCompartment">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_Skq1hQ8GEeeGN_RhupIKZw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_Skq1hg8GEeeGN_RhupIKZw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Skq1hw8GEeeGN_RhupIKZw"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_Skq1iA8GEeeGN_RhupIKZw" type="Activity_PreconditionCompartment">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_Skq1iQ8GEeeGN_RhupIKZw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_Skq1ig8GEeeGN_RhupIKZw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Skq1iw8GEeeGN_RhupIKZw"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_SkrckA8GEeeGN_RhupIKZw" type="Activity_PostconditionCompartment">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_SkrckQ8GEeeGN_RhupIKZw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_Skrckg8GEeeGN_RhupIKZw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Skrckw8GEeeGN_RhupIKZw"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_Skuf4A8GEeeGN_RhupIKZw" type="Activity_ActivityNodeCompartment">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Skuf4Q8GEeeGN_RhupIKZw"/>
+      </children>
+      <element xmi:type="uml:Activity" href="model.uml#_SdzYgA8GEeeGN_RhupIKZw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Skuf4g8GEeeGN_RhupIKZw"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_Skuf4w8GEeeGN_RhupIKZw" name="diagram_compatibility_version" stringValue="1.2.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_Skuf5A8GEeeGN_RhupIKZw"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_Skuf5Q8GEeeGN_RhupIKZw">
+      <owner xmi:type="uml:Model" href="model.uml#_SUwKMA8GEeeGN_RhupIKZw"/>
+    </styles>
+    <element xmi:type="uml:Activity" href="model.uml#_SdzYgA8GEeeGN_RhupIKZw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_SmFKwA8GEeeGN_RhupIKZw" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_SmFKwQ8GEeeGN_RhupIKZw" name="diagram_compatibility_version" stringValue="1.2.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_SmFKwg8GEeeGN_RhupIKZw"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_SmFKww8GEeeGN_RhupIKZw">
+      <owner xmi:type="uml:Model" href="model.uml#_SUwKMA8GEeeGN_RhupIKZw"/>
+    </styles>
+    <element xmi:type="uml:Model" href="model.uml#_SUwKMA8GEeeGN_RhupIKZw"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_Sm4cAA8GEeeGN_RhupIKZw" type="UseCase" name="UseCase Diagram" measurementUnit="Pixel">
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_Sm4cAQ8GEeeGN_RhupIKZw" name="diagram_compatibility_version" stringValue="1.2.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_Sm4cAg8GEeeGN_RhupIKZw"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_Sm4cAw8GEeeGN_RhupIKZw">
+      <owner xmi:type="uml:Model" href="model.uml#_SUwKMA8GEeeGN_RhupIKZw"/>
+    </styles>
+    <element xmi:type="uml:Model" href="model.uml#_SUwKMA8GEeeGN_RhupIKZw"/>
+  </notation:Diagram>
+</xmi:XMI>
