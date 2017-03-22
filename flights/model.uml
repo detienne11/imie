@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_SUwKMA8GEeeGN_RhupIKZw" name="RootElement">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_SUwKMA8GEeeGN_RhupIKZw" name="RootElement">
   <packagedElement xmi:type="uml:Activity" xmi:id="_SdzYgA8GEeeGN_RhupIKZw" name="Activity1"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_tkq4IA8GEeeGN_RhupIKZw" name="admin"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_vbjhQA8GEeeGN_RhupIKZw" name="Créer vols"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_x1PVcA8GEeeGN_RhupIKZw" memberEnd="_x1raUA8GEeeGN_RhupIKZw _x1sBYA8GEeeGN_RhupIKZw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_x1UN8A8GEeeGN_RhupIKZw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_x1U1AA8GEeeGN_RhupIKZw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_x1raUA8GEeeGN_RhupIKZw" name="créer vol" type="_vbjhQA8GEeeGN_RhupIKZw" association="_x1PVcA8GEeeGN_RhupIKZw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_x1sBYA8GEeeGN_RhupIKZw" name="actor1" type="_tkq4IA8GEeeGN_RhupIKZw" association="_x1PVcA8GEeeGN_RhupIKZw"/>
+  </packagedElement>
 </uml:Model>
