@@ -1,26 +1,96 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="ISO-8859-1">
-		<title>Insert title here</title>
-		<link type="text/css" href="resources/css/flights.css" rel="stylesheet"/>
+		<meta charset="UTF-8">
+		<title>Flights Register</title>
+		<link type="text/css" href="./resources/css/flights.css" rel="stylesheet"/>
+		<script type="text/javascript" src="./resources/js/flights.js"></script>
 	</head>
-<body>
-	<header>
-		<h1>Flights</h1>
-	</header>
-	<nav>
-		<ul>
-			<li></li>
-		</ul>
-	</nav>
-	<main>
-		<section>
-		
-		</section>
-		<section>
-		
-		</section>
-	</main>
-</body>
+	<body>
+		<header>
+			<div class="logo">&nbsp;</div>
+			<h1>Flights Register</h1>
+			<p>CDI13 : Jasmin & David</p>
+		</header>
+		<nav>
+			<ul>
+				<li>home</li>
+			</ul>
+		</nav>
+		<main>
+			<section>
+				<div id="search-box">
+					<form action="javascript: return false;" method="post">
+						<fieldset>
+							<label for="flight-id">N°
+								<input type="text" name="flight-id" placeholder="Entrez l'ID de vol"/>
+							</label>
+						</fieldset>
+						<fieldset>
+							<legend>Departure</legend>
+							<label for="airport-departure">Airport
+								<select name="airport-departure">
+								  <option value="NTE">Nantes</option>
+								  <option value="PAR">Paris</option>
+								  <option value="PAR">Shannon</option>
+								</select>
+							</label>
+							<label for="date-departure">Date
+								<input type="date" name="date-departure">								
+							</label>
+							<label for="time-departure">Time
+								<input type="time" name="time-departure">								
+							</label>							
+						</fieldset>					
+						<fieldset>
+							<legend>Arrival</legend>
+							<label for="airport-arrival">Airport
+								<select name="airport-arrival" >
+								  <option value="NTE">Nantes</option>
+								  <option value="PAR">Paris</option>
+								  <option value="PAR">Shannon</option>
+								</select>
+							</label>
+							<label for="date-arrival">Date
+								<input type="date" name="date-arrival">								
+							</label>
+							<label for="time-arrival">Time
+								<input type="time" name="time-arrival">								
+							</label>
+						</fieldset>
+						<fieldset>
+							<legend></legend>
+							<input type="submit" value="Ajouter"/>
+						</fieldset>
+					</form>
+				</div>
+			</section>
+			<section>
+				<div id="result-box">
+					<table id="result-table">
+						<thead>
+							<tr>
+								<th>flight ID</th>
+								<th>Departure</th>
+								<th>Arrival</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>NT4560</td>
+								<td>
+									<div>Nantes</div>
+									<div>01/04/2017 12:00</div>
+								</td>
+								<td>
+									<div>Shannon</div>
+									<div>01/04/2017 14:00</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+		</main>
+	</body>
 </html>
