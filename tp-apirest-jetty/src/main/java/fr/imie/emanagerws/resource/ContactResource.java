@@ -2,6 +2,7 @@ package fr.imie.emanagerws.resource;
 
 import java.util.List;
 
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -37,13 +38,19 @@ public class ContactResource {
     
     @POST
     public void createContact(Contact contact) {
-    	System.out.println("Contact " + contact);
+    	System.out.println("POST INSERT Contact " + contact);
     	this.service.addContact(contact);
     }
     
     @PUT
     public void updateContact(Contact contact) {
-    	System.out.println("Contact " + contact);
+    	System.out.println("PUT UPDATE Contact " + contact);
     	this.service.updateContact(contact);
+    }
+    
+    @DELETE
+    public void deleteContact(Contact contact){
+    	System.out.println("DELETE Contact " + contact);
+    	this.service.deleteContact(contact);
     }
 }

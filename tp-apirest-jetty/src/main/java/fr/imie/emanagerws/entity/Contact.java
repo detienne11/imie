@@ -57,7 +57,8 @@ public class Contact {
 	@Override
 	public boolean equals(Object obj) {
 		Contact other = (Contact) obj;
-		return (this.id == other.id) && (this.address.equals(other.address)) && (this.phone.equals(other.phone));
+		return (this.id == other.id);
+//		return (this.id == other.id) && (this.address.equals(other.address)) && (this.phone.equals(other.phone));
 	}
 
 	/* (non-Javadoc)

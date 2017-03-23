@@ -76,11 +76,15 @@ public class Service {
      */
     public void updateContact ( final Contact contact ){
     	
+//    	for (int i = 0; i < contacts.size(); i++) {    	
+//    		if (contacts.get(i).getId() == contact.getId()) {
+//    		contacts.set(i,contact);
+
     	for (Contact c : contacts) {
-			if (c.getId() == contact.getId()) {
+    		if (c.getId() == contact.getId()) {
 				c.setAddress(contact.getAddress());
 				c.setPhone(contact.getPhone());
-				
+    			break;
 			}
 		}
     	
