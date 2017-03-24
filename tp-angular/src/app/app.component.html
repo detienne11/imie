@@ -1,3 +1,47 @@
 <h1>
   {{title}}
 </h1>
+<br/>
+<input type="text" [(ngModel)]="saisie"/>
+<p>{{saisie}}</p>
+
+<h2>Form 1</h2>
+<form (ngSubmit)="addContact()">
+	Name :<input type="text" [(ngModel)]="contactForm.name" [ngModelOptions]="{standalone: true}" placeholder="Tape you name"/><br/>
+	Address : <input type="text" [(ngModel)]="contactForm.address" [ngModelOptions]="{standalone: true}" placeholder="Tape you address"/><br/>
+	Phone :<input type="text" [(ngModel)]="contactForm.phone" [ngModelOptions]="{standalone: true}" placeholder="Tape you phone"/><br/>
+	<input type="submit" value="+"/>
+</form>
+
+<h2>Form 2</h2>
+<p>Name :<input type="text" [(ngModel)]="contactForm2.name" placeholder="Tape you name"/><br/>
+	Address : <input type="text" [(ngModel)]="contactForm2.address"  placeholder="Tape you address"/><br/>
+	Phone :<input type="text" [(ngModel)]="contactForm2.phone" placeholder="Tape you phone"/><br/>
+	<button value="+" (click)="addContact2(contactForm2)"></button>
+</p>
+
+<h2>Liste de contacts</h2>
+<ul>
+	<h2>Contact pair : cas 1 html render</h2>
+	<li *ngFor="let contact of contacts">
+		{{contact.name}} - {{contact.address + ':' + contact.phone}} 
+	</li>
+	<h2>Contact pair : cas 2 JSON render</h2>
+	<li *ngFor="let contact of contacts">
+		{{contact | json}}
+	</li>
+	<h2>Contact pair : cas 3 function render</h2>
+	<li *ngFor="let contact of contacts">
+		{{ renderContacts(contact) }}
+	</li>
+	<h2>Contact pair : cas 1</h2>
+	<li *ngFor="let contact of contacts">
+		<div *ngIf="(contact.id % 2) == 0">
+				{{ renderContacts(contact) }}
+		</div>
+	</li>
+	<h2>Contact pair : cas 2</h2>
+	<li *ngFor="let contact of pairList()">	
+				{{ renderContacts(contact) }}
+	</li>
+</ul>
