@@ -24,7 +24,7 @@
 <ul>
 	<h2>Contact pair : cas 1 html render</h2>
 	<li *ngFor="let contact of contacts">
-		{{contact.name}} - {{contact.address + ':' + contact.phone}} 
+		{{contact.name}} - {{contact.address + ':' + contact.phone}} <button value="-" (click)="delContact(contact)"></button> <button value="edit" (click)="updContact(contact)"></button>
 	</li>
 	<h2>Contact pair : cas 2 JSON render</h2>
 	<li *ngFor="let contact of contacts">

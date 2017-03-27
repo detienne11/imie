@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Contact } from './contact';
+import { ContactsService } from './contacts.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Contact } from './contact';
   styleUrls: ['./app.component.css']
 })
   
-export class AppComponent {  
+export class AppComponent implements OnInit {  
   contacts : any = [];  
   title = 'TP Angular';
 
@@ -23,25 +24,20 @@ export class AppComponent {
 
   contactForm2 : Contact = new Contact(-1,null,null,null);
 
-  constructor(){
+  constructor(private contactsService : ContactsService){
+   
+  }
 
-    for(let i=0; i< 5;i++){
-
-      let contact = new Contact(i,'Dark Vador' + i,i + ' rue', i + '0000' + i);
-      
-      // let contact = {
-      //   id: i,
-      //   name:  'Dark',
-      //   address: 'Vador',
-      //   phone: '0660276552'
-      // };
-
-      this.contacts.push(contact);
-    }
+  ngOnInit() {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    console.log("AppComponent ngOnInit");
+    this.contactsService.getContacts().subscribe(data => {this.contacts = data});    
   }
 
   pairList(){
     var liste=[];
+    console.log(this.contacts);
     for (let contact of this.contacts){
       if ((contact.id % 2) == 0){
         liste.push(contact);
@@ -55,7 +51,7 @@ export class AppComponent {
   }
 
   addContact() {
-    console.log(this.contactForm);
+    console.log("AppComponent : addContact",this.contactForm);
 
     // let contact = {
     //   name: this.contactForm.name,
@@ -65,15 +61,27 @@ export class AppComponent {
 
     let contact = new Contact(0, this.contactForm.name, this.contactForm.address, this.contactForm.phone);
 
-    console.log(contact);
+    this.addContact2(contact);
 
-    this.contacts.push(contact);
   }
 
   addContact2(newContact) {
-    newContact.id = this.contacts.length + 1;
-    console.log(newContact);
-    this.contacts.push(newContact);
+
+    console.log("AppComponent : addContact2", newContact);
+
+    this.contactsService.addContact(newContact).subscribe( contact => {
+      this.contacts.push(contact);
+    });
+  }
+
+  updContact(contact) {
+    console.log("AppComponent : updContact", contact);
+    this.contactsService.updateContact(contact);
+  }
+
+  delContact(contact){
+    console.log("AppComponent : delContact", contact);
+    this.contactsService.deleteContact(contact);
   }
 
 }
