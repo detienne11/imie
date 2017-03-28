@@ -1,6 +1,15 @@
-<h1>
-  Détail Contact
-</h1>
-<p>
-  {{contact.name}} - {{contact.address + ':' + contact.phone}} 
-</p>
+<section>
+  <h2>Contact</h2>
+   <table>
+      <tr><th>LastName</th><td><input type="text" [(ngModel)]="contact.name" placeholder="Tape your lastname"/><br/></td></tr>
+      <tr><th>FirstName</th><td><input type="text" [(ngModel)]="contact.firstname" placeholder="Tape your firstname"/><br/></td></tr>
+      <tr><th>Address</th><td><input type="text" [(ngModel)]="contact.address"  placeholder="Tape your address"/></td></tr>
+      <tr><th>Email</th><td><input type="text" [(ngModel)]="contact.email"  placeholder="Tape your email"/></td></tr>
+      <tr><th>Phone</th><td><input type="text" [(ngModel)]="contact.phone" placeholder="Tape your phone"/></td></tr>
+      <tr><td colspan="2">
+        <button value="create" (click)="createContact(contact)">+</button>
+        <button value="update" (click)="updateContact(contact)">*</button>
+        <button value="delete" (click)="deleteContact(contact)">-</button>
+      </td></tr>
+  </table>
+</section>

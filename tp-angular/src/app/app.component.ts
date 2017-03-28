@@ -20,9 +20,11 @@ export class AppComponent implements OnInit {
   //   phone: ''
   // };
   
-  contactForm : Contact = new Contact(0,null,null,null);
+  contactForm : Contact = new Contact(0,null,null,null,null,null);
 
-  contactForm2 : Contact = new Contact(-1,null,null,null);
+  contactForm2 : Contact = new Contact(-1,null,null,null,null,null);
+
+  selectedContact : Contact = new Contact(-1,null,null,null,null,null);;
 
   constructor(private contactsService : ContactsService){
    
@@ -59,7 +61,7 @@ export class AppComponent implements OnInit {
     //   phone: this.contactForm.phone
     // };
 
-    let contact = new Contact(0, this.contactForm.name, this.contactForm.address, this.contactForm.phone);
+    let contact = new Contact(0, this.contactForm.name, null,this.contactForm.address, null,this.contactForm.phone);
 
     this.addContact2(contact);
 
@@ -82,6 +84,32 @@ export class AppComponent implements OnInit {
   delContact(contact){
     console.log("AppComponent : delContact", contact);
     this.contactsService.deleteContact(contact);
+  }
+  
+  onCreateContact(contact: Contact) {
+    console.log("AppComponent : onCreateContact", contact);
+    this.contactsService.addContact(contact).subscribe( contact => {
+      this.contacts.push(contact);
+    });
+  }
+
+  onUpdateContact(contact: Contact) {
+    console.log("AppComponent : onUpdateContact", contact);
+    this.contactsService.updateContact(contact);
+  }
+
+  onDeleteContact(contact: Contact) {
+    console.log("AppComponent : onDeleteContact", contact);
+    this.contactsService.deleteContact(contact).subscribe (() => {
+        this.contacts = this.contacts.filter((c) => {
+            return c.id != contact.id;
+        });
+    });
+  }
+
+  onSelectContact(contact : Contact) {
+     console.log("AppComponent : onSelectContact", contact);
+     this.selectedContact = contact;
   }
 
 }

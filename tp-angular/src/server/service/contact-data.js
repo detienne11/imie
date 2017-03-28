@@ -1,4 +1,4 @@
-const _ = require('lodash');
+// const _ = require('lodash');
 
 const Contact = require('./contact');
 
@@ -12,27 +12,18 @@ class ContactDao {
      */
     constructor (){
         console.log("ContactDao");
-        this._contacts = [
-            new Contact(1, "Nantes, France", "0000011111"),
-            new Contact(2, "Paris, France",  "0000011112"),
-            new Contact(3, "Rennes, France", "0000011113")
-        ];
+        // this._contacts = [
+        //     new Contact(1, "Nantes, France", "0000011111"),
+        //     new Contact(2, "Paris, France",  "0000011112"),
+        //     new Contact(3, "Rennes, France", "0000011113")
+        // ];
 
-        // this.contacts = [];
+        this.contacts = [];
 
-        // for(let i=0; i< 3;i++){
-
-        //     let contact = new Contact(i,'Dark Vador' + i,i + ' rue', i + '0000' + i);
-            
-        //     // let contact = {
-        //     //   id: i,
-        //     //   name:  'Dark',
-        //     //   address: 'Vador',
-        //     //   phone: '0660276552'
-        //     // };
-
-        //     this.contacts.push(contact);
-        // }
+        for(let i=0; i< 3;i++){
+            let contact = new Contact(i,'Dark' + i,'Vador' + i,i + ' rue','dagobah@' + i + '.com', i + '0000' + i);
+            this.contacts.push(contact);
+        }
 
         // console.log("ContactDao constructor :",this._contacts);
     }
@@ -42,9 +33,9 @@ class ContactDao {
      * @return {Array}
      */
     find (){
-        console.log("ContactDao find :",this._contacts);
-        return this._contacts;
-        // return this.contacts;
+        console.log("ContactDao find :",this.contacts);
+        // return this._contacts;
+        return this.contacts;
     }
 
     /**
@@ -53,9 +44,14 @@ class ContactDao {
      * @return {*}
      */
     findById (id){
-        return _(this._contacts).find( (contact) =>{
+
+        let contact = this.contacts.find((contact) => {
             return contact.id == id;
         });
+        return contact;
+        // return _(this._contacts).find( (contact) =>{
+        //     return contact.id == id;
+        // });
     }
     
     /**
@@ -63,11 +59,10 @@ class ContactDao {
      * @param cont
      */
     create (contact){
+        contact.id = this.contacts.length;
         console.log("ContactDao create :",contact);
-        contact.id = this._contacts.length + 1;
-        console.log("ContactDao create :",contact);
-        this._contacts.push(contact);
-        // this.contacts.push(contact);
+        // this._contacts.push(contact);
+        this.contacts.push(contact);
         return contact;
     }
 
@@ -80,7 +75,9 @@ class ContactDao {
 
         let c = this.findById(contact.id); 
         c.name = contact.name;
+        c.firstname = contact.firstname;
         c.address = contact.address;
+        c.email = contact.email;
         c.phone = contact.phone;
     }
 
@@ -90,10 +87,17 @@ class ContactDao {
      */
     delete (contact){
         console.log("ContactDao delete :",contact);
-    	_.remove(this._contacts, (_contact) => {    	
-        	console.log("Compare " ,contact,_contact);
-            return contact.id == _contact.id;
+
+         this.contacts = this.contacts.filter((c) => {
+            return c.id != contact.id;
         });
+
+         console.log("ContactDao delete :",this.contacts);
+
+    	// _.remove(this._contacts, (_contact) => {    	
+        // 	console.log("Compare " ,contact,_contact);
+        //     return contact.id == _contact.id;
+        // });
     }
 }
 

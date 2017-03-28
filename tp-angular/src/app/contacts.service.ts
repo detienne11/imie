@@ -53,9 +53,11 @@ export class ContactsService {
     this.http.put('/api/contacts', JSON.stringify(contact), this.options);
   }
     
-  deleteContact(contact : Contact){    
+  deleteContact(contact : Contact) {    
     console.log("ContactsService : deleteContact ", contact);
-    this.http.delete('/api/contacts/' + contact.id, this.options);
+    let url = '/api/contacts/' + contact.id;
+    console.log(url);
+    return this.http.delete(url, this.options);
   }
 
 }

@@ -30,17 +30,17 @@ router.post('/contacts', (req, res) => {
 router.put('/contacts', (req, res) => {
 	console.log('put url=/contacts');
 	
-	let contact = new Contact(req.body.id,req.body.name,req.body.address,req.body.phone);
+	let contact = new Contact(req.body.id,req.body.name,req.body.firstname,req.body.address,req.body.email,req.body.phone);
 
 	contactService.updateContact(contact);
 	res.status('200').end();
 });
 
-router.delete('/contacts', (req, res) => {
+router.delete('/contacts/:id', (req, res) => {
 	console.log('delete url=/contacts');
 	
 	let contact = {
-		id : req.body.id
+		id : req.params.id
 	};
 	
 	contactService.deleteContact(contact);

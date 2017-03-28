@@ -1,0 +1,27 @@
+<section>
+  <h2>Liste de contacts</h2>
+  <table>
+      <tr>
+          <th>Id</th>
+          <th>LastName</th>
+          <th>Firstname</th>
+          <!--<th>Address</th>-->
+          <!--<th>Email</th>-->
+          <!--<th>Phone</th>-->
+          <th></th>
+      </tr>
+      <tr *ngFor="let contact of contacts">
+          <td>{{contact.id}}</td>
+          <td>{{contact.name}}</td>
+          <td>{{contact.firstname}}</td>
+          <!--<td>{{contact.address}}</td>-->
+          <!--<td>{{contact.email}}</td>-->
+          <!--<td>{{contact.phone}}</td>-->
+          <td><button value="select" (click)="selectContact(contact)">></button></td>
+      </tr>
+  </table>
+
+  <footer class="footer" *ngIf="contacts.length > 0">
+    <span><strong>{{contacts.length}}</strong> {{contacts.length == 1 ? 'item' : 'items'}} left</span>
+  </footer>
+</section>
