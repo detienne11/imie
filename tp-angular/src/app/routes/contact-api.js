@@ -21,7 +21,7 @@ router.get('/contacts/:id', (req, res) => {
 router.post('/contacts', (req, res) => {
 	console.log('post url=/contacts');
 
-	let contact = new Contact(null,req.body.name,req.body.address,req.body.phone);
+	let contact = new Contact(null,req.body.name,req.body.firstname,req.body.address,req.body.email,req.body.phone);
 	contact = contactService.addContact(contact);
 	
 	res.json(contact);

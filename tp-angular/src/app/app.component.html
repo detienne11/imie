@@ -1,5 +1,5 @@
 <header>
-	<h1>TP Angular</h1>
+	<h1>TP Final Angular</h1>
 </header>
 <main>
 	<app-contact-list [contacts]="contacts" (select)="onSelectContact($event)"></app-contact-list>
@@ -7,7 +7,10 @@
 </main>
 
 <section>
-	<h1>{{title}}</h1>
+	<header>
+		<h1>{{title}}</h1>
+	</header>
+	
 
 	<br/>
 		<input type="text" [(ngModel)]="saisie"/>

@@ -7,9 +7,9 @@
       <tr><th>Email</th><td><input type="text" [(ngModel)]="contact.email"  placeholder="Tape your email"/></td></tr>
       <tr><th>Phone</th><td><input type="text" [(ngModel)]="contact.phone" placeholder="Tape your phone"/></td></tr>
       <tr><td colspan="2">
-        <button value="create" (click)="createContact(contact)">+</button>
-        <button value="update" (click)="updateContact(contact)">*</button>
-        <button value="delete" (click)="deleteContact(contact)">-</button>
+        <button class="pure-button pure-button-primary" value="create" (click)="createContact(contact)">+</button>
+        <button class="pure-button pure-button-primary" value="update" (click)="updateContact(contact)">*</button>
+        <button class="pure-button pure-button-primary" value="delete" (click)="deleteContact(contact)">-</button>
       </td></tr>
   </table>
 </section>
