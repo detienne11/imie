@@ -50,7 +50,7 @@ export class ContactsService {
 
   updateContact(contact : Contact){    
     console.log("ContactsService : updateContact ", contact);
-    this.http.put('/api/contacts', JSON.stringify(contact), this.options);
+    return this.http.put('/api/contacts', JSON.stringify(contact), this.options);
   }
     
   deleteContact(contact : Contact) {    

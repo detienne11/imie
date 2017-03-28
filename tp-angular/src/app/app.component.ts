@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
 
   contactForm2 : Contact = new Contact(-1,null,null,null,null,null);
 
-  selectedContact : Contact = new Contact(-1,null,null,null,null,null);;
+  selectedContact : Contact = new Contact(-1,null,null,null,null,null);
 
   constructor(private contactsService : ContactsService){
    
@@ -85,22 +85,38 @@ export class AppComponent implements OnInit {
     console.log("AppComponent : delContact", contact);
     this.contactsService.deleteContact(contact);
   }
-  
+
+  /* TP FINAL ANGULAR*/  
+
+  refreshContacts(){
+    console.log("AppComponent : refreshContacts");
+    this.contactsService.getContacts().subscribe(data => {this.contacts = data}); 
+  }
+
   onCreateContact(contact: Contact) {
     console.log("AppComponent : onCreateContact", contact);
     this.contactsService.addContact(contact).subscribe( contact => {
+      // this.refreshContacts();
       this.contacts.push(contact);
     });
   }
 
   onUpdateContact(contact: Contact) {
     console.log("AppComponent : onUpdateContact", contact);
-    this.contactsService.updateContact(contact);
+    this.contactsService.updateContact(contact).subscribe (() => {
+      // this.refreshContacts();
+      let indexOf = this.contacts.findIndex(elt => {return elt.id == contact.id;});
+      if (indexOf != -1) {
+        let removed = this.contacts.splice(indexOf, 1, contact);
+        console.log("Replace",removed,contact);
+      }      
+    });
   }
 
   onDeleteContact(contact: Contact) {
     console.log("AppComponent : onDeleteContact", contact);
     this.contactsService.deleteContact(contact).subscribe (() => {
+        // this.refreshContacts();
         this.contacts = this.contacts.filter((c) => {
             return c.id != contact.id;
         });
@@ -108,8 +124,8 @@ export class AppComponent implements OnInit {
   }
 
   onSelectContact(contact : Contact) {
-     console.log("AppComponent : onSelectContact", contact);
-     this.selectedContact = contact;
+     console.log("AppComponent : onSelectContact", contact);     
+     this.selectedContact = new Contact(contact.id,contact.name,contact.firstname,contact.address,contact.email,contact.phone);
   }
 
 }
