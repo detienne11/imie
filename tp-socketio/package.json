@@ -1,0 +1,16 @@
+{
+  "name": "tp-socketio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+  	"start" : "node ./src/main/js/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^1.7.3",
+    "uuid": "^3.0.1"
+  }
+}
