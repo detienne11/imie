@@ -4,6 +4,7 @@ module.exports = {Contact};
  * Contact Object
  */
 function Contact(){
+	this.id = null;
     this.address = null;
 	this.phone = null;
 };
@@ -11,6 +12,14 @@ function Contact(){
 /**
  * GETTERs & SETTERs
  */
+Contact.prototype.getId = function(){
+	return this.id;
+};
+
+Contact.prototype.setId = function(value){
+	this.id = value;
+};
+
 Contact.prototype.getAddress = function(){
 	return this.address;
 };
