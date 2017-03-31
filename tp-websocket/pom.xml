@@ -16,6 +16,19 @@
 
 	<build>
 		<finalName>websocket</finalName>
+		<!-- ajouter dans le fichier settings.xml  rubrique server le server TomeeServer avec login /password-->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+    			<artifactId>tomcat7-maven-plugin</artifactId>
+    			<version>2.2</version>
+    			<configuration>
+    				<url>http://localhost:8086/manager/text</url>
+					<server>TomeeServer</server>
+					<path>/tp-websocket</path>
+    			</configuration>
+			</plugin>
+		</plugins>
 	</build>
 
 	<dependencies>
