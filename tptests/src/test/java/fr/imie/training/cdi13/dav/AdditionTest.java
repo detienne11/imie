@@ -52,7 +52,7 @@ public class AdditionTest {
 		this.addition = new Addition();
 		
 		long result = this.addition.calculer(5, 6);
-		assertEquals(10,result);
+		assertEquals(11,result);
 		assertTrue(result == 11);
 	} 
 
@@ -93,7 +93,7 @@ public class AdditionTest {
 		
 	}
 
-	@Test
+
 	public void testDateValide(){
 		this.addition = new Addition();
 		boolean res = this.addition.dateValide(11, 12, 2001);
