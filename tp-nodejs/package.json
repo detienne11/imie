@@ -4,9 +4,18 @@
   "description": "Generated with Eclipse npm Tools",
   "main": "demo.js",
   "scripts": {
-	"start": "node ./src/main/js/demo.js",
-	"test": "echo 'Error: no test specified' && exit 1"
+    "start": "node ./src/main/js/demo.js",
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "engines": {
+    "node": "7.10.0",
+    "npm": "4.5.0"
   },
   "author": "david etienne cdi13",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongodb": "^2.2.27"
+  }
 }
